@@ -1,4 +1,4 @@
-/*  
+/*
 Main Background: #2B2733
 
 Text on Main BG: #CBC9CF
@@ -76,14 +76,42 @@ h3 {
     border-left: 4px #46424D solid;
 }
 #study-icon {
+    cursor: pointer;
     height: 30px;
     width: 30px;
 }
 #meditate-icon {
+    cursor: pointer;
     height: 30px;
     width: 30px;
 }
 #exercise-icon {
+    cursor: pointer;
     height: 30px;
     width: 30px;
+}
+
+.what-would {
+  margin-left: 6vw;
+}
+
+.minutes {
+  margin-left: 6vw;
+  float: left;
+
+}
+
+.seconds {
+  margin-right: 6vw;
+  float: right;
+
+}
+
+.start-activity-button {
+  height: 35px;
+  width: 170px;
+  float: right;
+  margin-right: 8vw;
+  margin-bottom: -5vh;
+
 }
