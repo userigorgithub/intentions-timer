@@ -1,0 +1,36 @@
+/*  
+Main Background: #2B2733
+
+Text on Main BG: #CBC9CF
+
+Header and Cards: #46424D
+
+Text on Header/Cards: #FFF
+
+Study: #B3FD78
+
+Meditate: #C278FD
+
+Exercise: #FD8078
+
+Error: #EFB7EC
+*/
+
+body {
+    background-color: #2B2733;
+    background-size: cover;
+    margin: none;
+    padding: none;
+    overflow: hidden;
+}
+.header {
+    display: flex;
+    background-color: #46424D;
+    font-family: "Montserrat";
+    font-size: 28px;
+    color: #FFF;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
