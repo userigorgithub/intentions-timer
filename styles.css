@@ -22,15 +22,68 @@ body {
     margin: none;
     padding: none;
     overflow: hidden;
+    font-family: "Montserrat";
+    color: #FFF;
+}
+h1 {
+    color: #CBC9CF;
+    margin-left: 2vw;
+}
+h3 {
+    margin-left: 6vw;
+    margin-top: 8vh;
 }
 .header {
     display: flex;
     background-color: #46424D;
-    font-family: "Montserrat";
+    color: #CBC9CF;
     font-size: 28px;
-    color: #FFF;
     width: 100vw;
     height: 10vh;
     align-items: center;
     justify-content: center;
+}
+.new-activity {
+    position: relative;
+    display: inline-block;
+    align-content: center;
+    align-items: center;
+    margin-left: 2vw;
+    width: 60vw;
+    height: 70vh;
+    background-color: #46424D;
+}
+.button {
+    display: inline-block;
+    margin-top: 1vh;
+    margin-left: 6vw;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 2px #FFF solid;
+    width: 140px;
+    height: 60px;
+    background-color: #46424D;
+    color: #FFF;
+}
+.past-activities {
+    background-color: #2B2733;
+    position: relative;
+    float: right;
+    margin-top: -80px;
+    width: 30vw;
+    height: 100vh;
+    color: #CBC9CF;
+    border-left: 4px #46424D solid;
+}
+#study-icon {
+    height: 30px;
+    width: 30px;
+}
+#meditate-icon {
+    height: 30px;
+    width: 30px;
+}
+#exercise-icon {
+    height: 30px;
+    width: 30px;
 }
