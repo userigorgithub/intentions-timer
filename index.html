@@ -23,29 +23,30 @@
             <button class="button">
             <img src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
             <br>Exercise</button>
-        <form>
-            <p class="what-would">
-            <label for ="accomplishment">What would you like to accomplish this time?</label>
-            <br>
-            <input class="accomplishment" type="text" id="accomplishment-input" name="accomplishment">
+        <form class="goal-set">
+            <p>
+                <label for="accomplishments">What would you like to accomplish this time?</label>
+                <br>
+                <input id="accomplishments" type="text">
             </p>
-            <p class="minutes">
-            <label for ="minutes">Minutes</label>
-            <br>
-            <input class="minutes" type="text" id="minutes-input" name="minutes">
+        </form>
+        <form class="timer">
+            <p>
+                <label for="minutes">Minutes</label>
+                <br>
+                <input id="minutes" type="text">
             </p>
-            <p class="seconds">
-            <label for ="seconds">Seconds</label>
-            <br>
-            <input class="seconds" type="text" id="seconds-input" name="seconds">
+            <p>
+                <label for ="seconds" id="seconds-label">Seconds</label>
+                <br>
+                <input id="seconds" type="text">
             </p>
         </form>
         <button class="start-activity-button">START ACTIVITY</button>
         </section>
         <section class="past-activities right">
             <h1>Past Activities</h1>
-            <p>You haven't logged any activities yet.</p>
-            <p>Complete the form to the left to get started!</p>
+            <p class="default-text">You haven't logged any activities yet. <br>Complete the form to the left to get started!</p>
         </section>
     </main>
 <link rel="text/JavaScript" href="main.js">
