@@ -52,12 +52,14 @@ h3 {
     align-content: center;
     align-items: center;
     margin-left: 2vw;
+    margin-right: 5px;
     width: 58vw;
     height: 70vh;
     background-color: #46424D;
 }
 .button {
     cursor: pointer;
+    padding: auto;
     display: inline-block;
     margin-top: 1vh;
     margin-left: 7rem;
@@ -70,6 +72,10 @@ h3 {
     color: #FFF;
     font-size: 18px;
     border-radius: 3px;
+}
+.button:focus-within {
+    color: #C278FD;
+    border-color: #C278FD;
 }
 .past-activities {
     background-color: #2B2733;
@@ -96,6 +102,9 @@ h3 {
 #exercise-icon {
     height: 30px;
     width: 30px;
+}
+#study-icon:focus {
+    color: #C278FD;
 }
 label {
     display: block;
