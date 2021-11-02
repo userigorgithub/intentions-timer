@@ -19,7 +19,8 @@ Error: #EFB7EC
 body {
     background-color: #2B2733;
     background-size: cover;
-    margin: none;
+    margin-top: -10px;
+    margin-left: -10px;
     padding: none;
     overflow: hidden;
     font-family: "Montserrat";
@@ -28,6 +29,7 @@ body {
 h1 {
     color: #CBC9CF;
     margin-left: 2vw;
+    font-size: 24px;
 }
 h3 {
     margin-left: 6vw;
@@ -38,7 +40,7 @@ h3 {
     background-color: #46424D;
     color: #CBC9CF;
     font-size: 28px;
-    width: 100vw;
+    width: 105vw;
     height: 10vh;
     align-items: center;
     justify-content: center;
@@ -49,7 +51,7 @@ h3 {
     align-content: center;
     align-items: center;
     margin-left: 2vw;
-    width: 60vw;
+    width: 58vw;
     height: 70vh;
     background-color: #46424D;
 }
@@ -60,7 +62,7 @@ h3 {
     margin-right: 20px;
     margin-bottom: 20px;
     border: 2px #FFF solid;
-    width: 140px;
+    width: 120px;
     height: 60px;
     background-color: #46424D;
     color: #FFF;
@@ -69,49 +71,79 @@ h3 {
     background-color: #2B2733;
     position: relative;
     float: right;
-    margin-top: -80px;
-    width: 30vw;
+    margin-top: -61px;
+    width: 35vw;
     height: 100vh;
     color: #CBC9CF;
     border-left: 4px #46424D solid;
 }
+.default-text {
+    text-align: center;
+    margin: 20px 60px;
+}
 #study-icon {
-    cursor: pointer;
     height: 30px;
     width: 30px;
 }
 #meditate-icon {
-    cursor: pointer;
     height: 30px;
     width: 30px;
 }
 #exercise-icon {
-    cursor: pointer;
     height: 30px;
     width: 30px;
 }
-
-.what-would {
-  margin-left: 6vw;
+label {
+    display: block;
+    width: 550px;
+    text-align: top;
+    margin-left: 5rem;
+    margin-right: auto;
 }
-
-.minutes {
-  margin-left: 6vw;
-  float: left;
-
+input {
+    display: inline-block;
+    border: none;
+    background-color: #46424D;
+    border-bottom: 2px solid #CBC9CF;
+    
 }
-
-.seconds {
-  margin-right: 6vw;
-  float: right;
-
-}
-
-.start-activity-button {
-  height: 35px;
-  width: 170px;
-  float: right;
-  margin-right: 8vw;
-  margin-bottom: -5vh;
+#accomplishments {
+    position: relative;
+    display: block;
+    margin-left: 5rem;
+    width: 580px;
 
 }
+#minutes {
+    position: relative;
+    display: block;
+    float: left;
+    width: 250px;
+    margin-left: 5rem;
+}
+
+#seconds {
+    position: relative;
+    display: block;
+    width: 250px;
+    margin-left: -14rem;
+}
+#seconds-label {
+    margin-left: -14rem;
+    width: 100px;
+}
+.timer {
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+ .start-activity-button {
+    display: inline-block;
+    height: 35px;
+    width: 170px;
+    margin-left: 31rem;
+    margin-top: 1.5rem;
+
+} 
