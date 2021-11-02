@@ -24,11 +24,12 @@ body {
     padding: none;
     overflow: hidden;
     font-family: "Montserrat";
+    font-weight: 700;
     color: #FFF;
 }
 h1 {
     color: #CBC9CF;
-    margin-left: 2vw;
+    margin-left: 2rem;
     font-size: 24px;
 }
 h3 {
@@ -67,6 +68,8 @@ h3 {
     height: 60px;
     background-color: #46424D;
     color: #FFF;
+    font-size: 18px;
+    border-radius: 3px;
 }
 .past-activities {
     background-color: #2B2733;
@@ -100,6 +103,7 @@ label {
     text-align: top;
     margin-left: 7rem;
     margin-right: auto;
+    font-size: 18px;
 }
 input {
     display: inline-block;
@@ -144,10 +148,23 @@ input {
 }
 
  .start-activity-button {
+    cursor: pointer;
     display: inline-block;
     height: 35px;
     width: 170px;
     margin-left: 36rem;
     margin-top: 1.5rem;
-
+    border-radius: 3px;
 } 
+.start-activity-button:hover {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #cfcdd1;
+    height: 35px;
+    width: 170px;
+    margin-left: 36rem;
+    margin-top: 1.5rem;
+}
+.default-text {
+    margin-top: 5rem;
+}
