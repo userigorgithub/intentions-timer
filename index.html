@@ -24,11 +24,23 @@
             <img src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
             <br>Exercise</button>
         <form>
-            <input type="text" id="accomplishment-input" name="accomplishment"/>
-            <input type="text" id="minutes-input" name="minutes"/>
-            <input type="text" id="seconds-input" name="seconds"/>
-            <button class="start-activity-button">START ACTIVITY</button>
+            <p class="what-would">
+            <label for ="accomplishment">What would you like to accomplish this time?</label>
+            <br>
+            <input class="accomplishment" type="text" id="accomplishment-input" name="accomplishment">
+            </p>
+            <p class="minutes">
+            <label for ="minutes">Minutes</label>
+            <br>
+            <input class="minutes" type="text" id="minutes-input" name="minutes">
+            </p>
+            <p class="seconds">
+            <label for ="seconds">Seconds</label>
+            <br>
+            <input class="seconds" type="text" id="seconds-input" name="seconds">
+            </p>
         </form>
+        <button class="start-activity-button">START ACTIVITY</button>
         </section>
         <section class="past-activities right">
             <h1>Past Activities</h1>
@@ -37,6 +49,6 @@
         </section>
     </main>
 <link rel="text/JavaScript" href="main.js">
-<link rel="text/JavaScript" href="Activity.js">    
+<link rel="text/JavaScript" href="Activity.js">
 </body>
 </html>
