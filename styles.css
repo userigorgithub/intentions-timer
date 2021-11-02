@@ -15,7 +15,9 @@ Exercise: #FD8078
 
 Error: #EFB7EC
 */
-
+.hidden {
+    display: none !important;
+}
 body {
     background-color: #2B2733;
     background-size: cover;
@@ -68,15 +70,13 @@ h3 {
     border: 2px #FFF solid;
     width: 120px;
     height: 60px;
-    background-color: #46424D;
+    background-color: transparent;
+    background-image: inherit;
     color: #FFF;
     font-size: 18px;
     border-radius: 3px;
 }
-.button:focus-within {
-    color: #C278FD;
-    border-color: #C278FD;
-}
+
 .past-activities {
     background-color: #2B2733;
     position: relative;
@@ -91,7 +91,11 @@ h3 {
     text-align: center;
     margin: 20px 60px;
 }
-#study-icon {
+.icon {
+    height: 30px;
+    width: 30px;
+}
+.icon2 {
     height: 30px;
     width: 30px;
 }
@@ -102,9 +106,6 @@ h3 {
 #exercise-icon {
     height: 30px;
     width: 30px;
-}
-#study-icon:focus {
-    color: #C278FD;
 }
 label {
     display: block;
