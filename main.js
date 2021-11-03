@@ -19,12 +19,24 @@ meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
 
 buttonStudy.addEventListener('click', function() {
+meditateIconLit.classList.add('hidden')
+exerciseIconLit.classList.add('hidden')
+meditateIcon.classList.remove('hidden')
+exerciseIcon.classList.remove('hidden')  
 changeIcon(studyIcon, studyIconLit)});
 
 buttonMeditate.addEventListener('click', function() {
+  studyIconLit.classList.add('hidden')
+  exerciseIconLit.classList.add('hidden')
+  studyIcon.classList.remove('hidden')
+  exerciseIcon.classList.remove('hidden')
   changeIcon(meditateIcon, meditateIconLit)
 });
 buttonExercise.addEventListener('click', function() {
+  studyIconLit.classList.add('hidden')
+  meditateIconLit.classList.add('hidden')
+  studyIcon.classList.remove('hidden')
+  meditateIcon.classList.remove('hidden')
   changeIcon(exerciseIcon, exerciseIconLit)
 });
 
@@ -32,7 +44,7 @@ startTimer.addEventListener("click", beginClock)
 
 function beginClock() {
   if (accomplishments.value === undefined || "") {
-    return "A description is required"
+    errorMessage.classList.remove('hidden')
   }
 }
 
