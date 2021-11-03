@@ -7,8 +7,13 @@ var meditateIcon = document.querySelector('#meditate-icon');
 var meditateIconLit = document.querySelector('#meditate-icon-active');
 var exerciseIcon = document.querySelector('#exercise-icon');
 var exerciseIconLit = document.querySelector('#exercise-icon-active');
+var accomplishments = document.querySelector("#accomplishments")
+var minutes = document.querySelector("#minutes")
+var seconds = document.querySelector("#seconds")
+var startTimer = document.querySelector(".start-activity-button")
+var errorMessage = document.querySelector(".error-message")
 
-
+errorMessage.classList.add('hidden')
 studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
@@ -23,7 +28,23 @@ buttonExercise.addEventListener('click', function() {
   changeIcon(exerciseIcon, exerciseIconLit)
 });
 
+startTimer.addEventListener("click", beginClock)
+
+function beginClock() {
+  if (accomplishments.value === undefined || "") {
+    return "A description is required"
+  }
+}
+
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
     iconActive.classList.remove('hidden');
 }
+
+// if (minutes.value === NaN || "") {
+//
+// }
+//
+// if (seconds.value === NaN || "") {
+//   return "Please enter a number"
+// }
