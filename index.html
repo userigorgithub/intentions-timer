@@ -10,10 +10,13 @@
 </head>
 <body>
     <header class="header">Intention Timer</header>
-    <main>
+    <section class="wrapper">
+    <main class="new-activity-main">
         <h1>New Activity</h1>
-        <section class="new-activity left">
-            <h3>Select a category:</h3>
+        <h3>Select a category:</h3>
+        <section class="new-activity">
+            
+            <div class="button-group">
             <button class="button" id="button-1" name="button">
               <img class="icon" src="assets/study.svg" id="study-icon" alt="study icon"/>
               <img class="icon2" src="assets/study-active.svg" id="study-icon-active" alt="study icon"/>
@@ -26,6 +29,7 @@
               <img class="icon" src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
               <img class="icon2" src="assets/exercise-active.svg" id="exercise-icon-active" alt="exercise icon"/>
               <br>Exercise</button>
+            </div>
         <form class="goal-set">
             <p>
                 <label for="accomplishments">What would you like to accomplish during this time?</label>
@@ -39,7 +43,7 @@
         </form>
         <form class="timer">
             <p>
-                <label for="minutes">Minutes</label>
+                <label for="minutes" id="minutes-label">Minutes</label>
                 <br>
                 <input id="minutes" type="number" min=1 >
             </p>
@@ -51,11 +55,15 @@
         </form>
         <button class="start-activity-button">START ACTIVITY</button>
         </section>
+    </main>
+    <main class="current-activity hidden">
+
+    </main>
         <section class="past-activities right">
             <h1>Past Activities</h1>
             <p class="default-text">You haven't logged any activities yet. <br>Complete the form to the left to get started!</p>
         </section>
-    </main>
+    </section>
 <script type="text/JavaScript" src="main.js"></script>
 <script type="text/JavaScript" src="Activity.js"></script>
 </body>
