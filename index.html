@@ -14,25 +14,28 @@
         <h1>New Activity</h1>
         <section class="new-activity left">
             <h3>Select a category:</h3>
-            <button class="button">
-            <img class="icon" src="assets/study.svg" id="study-icon" alt="study icon"/>
-            <img class="icon2" src="assets/study-active.svg" id="study-icon-active" alt="study icon"/>
-            <br>Study</button>
-            <button class="button">
-            <img class="icon" src="assets/meditate.svg" id="meditate-icon" alt="meditate icon"/>
-            <img class="icon2" src="assets/meditate-active.svg" id="meditate-icon-active" alt="meditate icon"/>
- 
-            <br>Meditate</button>
-            <button class="button">
-            <img class="icon" src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
-            <img class="icon2" src="assets/exercise-active.svg" id="exercise-icon-active" alt="exercise icon"/>
-            <br>Exercise</button>
-                
+            <button class="button" id="button-1">
+              <img class="icon" src="assets/study.svg" id="study-icon" alt="study icon"/>
+              <img class="icon2" src="assets/study-active.svg" id="study-icon-active" alt="study icon"/>
+              <br>Study</button>
+            <button class="button" id="button-2">
+              <img class="icon" src="assets/meditate.svg" id="meditate-icon" alt="meditate icon"/>
+              <img class="icon2" src="assets/meditate-active.svg" id="meditate-icon-active" alt="meditate icon"/>
+              <br>Meditate</button>
+            <button class="button" id="button-3">
+              <img class="icon" src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
+              <img class="icon2" src="assets/exercise-active.svg" id="exercise-icon-active" alt="exercise icon"/>
+              <br>Exercise</button>
+
         <form class="goal-set">
             <p>
                 <label for="accomplishments">What would you like to accomplish during this time?</label>
                 <br>
                 <input id="accomplishments" type="text">
+                <div class="error-message">
+                  <img class="warning" src="./assets/warning.svg">
+                  <small class="warning" id="error">A description is required</small>
+                </div>
             </p>
         </form>
         <form class="timer">

@@ -77,6 +77,20 @@ h3 {
     border-radius: 3px;
 }
 
+#button-1:focus {
+  border: 2px #B3FD78 solid;
+  color: #B3FD78;
+}
+
+#button-2:focus {
+  border: 2px #C278FD solid;
+  color: #C278FD;
+}
+
+#button-3:focus {
+  border: 2px #FD8078 solid;
+  color: #FD8078;
+}
 .past-activities {
     background-color: #2B2733;
     position: relative;
@@ -165,7 +179,7 @@ input {
     margin-left: 36rem;
     margin-top: 1.5rem;
     border-radius: 3px;
-} 
+}
 .start-activity-button:hover {
     cursor: pointer;
     display: inline-block;
@@ -177,4 +191,17 @@ input {
 }
 .default-text {
     margin-top: 5rem;
+}
+
+.warning {
+  height: 15px;
+  width: 15px;
+  margin-left: 110px;
+  margin-top: 7px;
+}
+
+#error {
+  margin-left: 0px;
+  color: #EFB7EC;
+  font-size: 15px;
 }
