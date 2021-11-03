@@ -205,3 +205,11 @@ input {
   color: #EFB7EC;
   font-size: 15px;
 }
+
+#seconds-error {
+  margin-left: 185px;
+}
+
+#minutes-error {
+
+}
