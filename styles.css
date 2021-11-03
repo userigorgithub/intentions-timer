@@ -192,3 +192,16 @@ input {
 .default-text {
     margin-top: 5rem;
 }
+
+.warning {
+  height: 15px;
+  width: 15px;
+  margin-left: 110px;
+  margin-top: 7px;
+}
+
+#error {
+  margin-left: 0px;
+  color: #EFB7EC;
+  font-size: 15px;
+}
