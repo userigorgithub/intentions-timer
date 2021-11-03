@@ -11,7 +11,10 @@ var accomplishments = document.querySelector("#accomplishments")
 var minutes = document.querySelector("#minutes")
 var seconds = document.querySelector("#seconds")
 var startTimer = document.querySelector(".start-activity-button")
+var warningMessage = document.querySelector(".warning");
 var errorMessage = document.querySelector(".error-message")
+var newActivityScreen = document.querySelector(".new-activity-main")
+var currentActivityScreen = document.querySelector(".current-activity")
 
 var invalidChars = ["-", "e", "+", "E"];
 
@@ -60,12 +63,18 @@ function checkCharacters(event) {
 }
 
 function beginClock() {
+  
   if (accomplishments.value === "") {
     errorMessage.classList.remove('hidden')
   } else if (minutes.value === "") {
     errorMessage.classList.remove('hidden')
+    // errorMessage.innerHTML = "A minutes value is required"
   } else if (seconds.value === "") {
     errorMessage.classList.remove('hidden')
+    // errorMessage.innerHTML = "A seconds value is required"
+  } else {
+    newActivityScreen.classList.add('hidden');
+    currentActivityScreen.classList.remove('hidden');
   }
 }
 
@@ -73,11 +82,3 @@ function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
     iconActive.classList.remove('hidden');
 }
-
-// if (minutes.value === NaN || "") {
-//
-// }
-//
-// if (seconds.value === NaN || "") {
-//   return "Please enter a number"
-// }
