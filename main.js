@@ -13,7 +13,11 @@ var seconds = document.querySelector("#seconds")
 var startTimer = document.querySelector(".start-activity-button")
 var errorMessage = document.querySelector(".error-message")
 
-errorMessage.classList.add('hidden')
+var invalidChars = ["-", "e", "+", "E"];
+
+
+
+errorMessage.classList.add('hidden');
 studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
@@ -22,7 +26,7 @@ buttonStudy.addEventListener('click', function() {
 meditateIconLit.classList.add('hidden')
 exerciseIconLit.classList.add('hidden')
 meditateIcon.classList.remove('hidden')
-exerciseIcon.classList.remove('hidden')  
+exerciseIcon.classList.remove('hidden')
 changeIcon(studyIcon, studyIconLit)});
 
 buttonMeditate.addEventListener('click', function() {
@@ -42,8 +46,25 @@ buttonExercise.addEventListener('click', function() {
 
 startTimer.addEventListener("click", beginClock)
 
+minutes.addEventListener("keydown", function () {
+  checkCharacters(event)
+})
+seconds.addEventListener("keydown", function () {
+  checkCharacters(event)
+})
+
+function checkCharacters(event) {
+  if (invalidChars.includes(event.key)) {
+    event.preventDefault()
+  }
+}
+
 function beginClock() {
-  if (accomplishments.value === undefined || "") {
+  if (accomplishments.value === "") {
+    errorMessage.classList.remove('hidden')
+  } else if (minutes.value === "") {
+    errorMessage.classList.remove('hidden')
+  } else if (seconds.value === "") {
     errorMessage.classList.remove('hidden')
   }
 }
