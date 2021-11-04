@@ -31,11 +31,12 @@ body {
     font-weight: 700;
     color: #FFF;
 }
-h1 {
+.activity-header {
     color: #CBC9CF;
     margin-left: 2rem;
     font-size: 24px;
 }
+
 h3 {
     position: absolute;
     z-index: 1;
@@ -69,7 +70,7 @@ h3 {
     height: 75vh;
     background-color: #46424D;
 }
-.current-activity {
+.div-class {
     position: relative;
     display: flex;
     padding: none;
@@ -83,6 +84,7 @@ h3 {
     height: 75vh;
     background-color: #46424D;
 }
+
 .button-group {
     display: flex;
     justify-content: center;
@@ -232,7 +234,7 @@ input {
 }
 
 .warning {
-  
+
   height: 15px;
   width: 15px;
   margin-left: 3rem;
@@ -240,7 +242,7 @@ input {
 }
 
 #error {
-    
+
   margin-left: 0px;
   color: #EFB7EC;
   font-size: 15px;
@@ -255,4 +257,12 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.timer-button {
+  background-color: red;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 2px #C278FD solid;
 }
