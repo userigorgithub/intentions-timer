@@ -39,7 +39,7 @@ function timerRun() {
 
 
 
-=======
+
 var goals = document.querySelector(".accomplishments-timer-input")
 var minOutput = document.querySelector(".time-m")
 var secOutput = document.querySelector(".time-s")
@@ -107,7 +107,7 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
- Feature/Iteration2-timer-functions
+
     
   }
   timerRun();
@@ -124,6 +124,6 @@ function changeIcon(icon, iconActive) {
     iconActive.classList.remove('hidden');
 }
 
-function makeInstance() {
-  var currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value, (minutes.value + seconds.value))
-}
+// function makeInstance() {
+//   var currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value, (minutes.value + seconds.value))
+// }
