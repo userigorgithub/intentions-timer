@@ -1,16 +1,16 @@
 var buttonStudy = document.querySelector('#button-1');
-var buttonMeditate = document.querySelector('#button-2')
-var buttonExercise = document.querySelector('#button-3')
+var buttonMeditate = document.querySelector('#button-2');
+var buttonExercise = document.querySelector('#button-3');
 var studyIconLit = document.querySelector('#study-icon-active');
 var studyIcon = document.querySelector('#study-icon');
 var meditateIcon = document.querySelector('#meditate-icon');
 var meditateIconLit = document.querySelector('#meditate-icon-active');
 var exerciseIcon = document.querySelector('#exercise-icon');
 var exerciseIconLit = document.querySelector('#exercise-icon-active');
-var accomplishments = document.querySelector("#accomplishments")
-var minutes = document.querySelector("#minutes")
-var seconds = document.querySelector("#seconds")
-var startTimer = document.querySelector(".start-activity-button")
+var accomplishments = document.querySelector("#accomplishments");
+var minutes = document.querySelector("#minutes");
+var seconds = document.querySelector("#seconds");
+var startTimer = document.querySelector(".start-activity-button");
 var warningMessage = document.querySelector(".warning");
 var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
@@ -20,7 +20,7 @@ var accomplishmentsInput = document.querySelector('.accomplishments');
 var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
 var timerMinutesOutput = document.querySelector('.minutes');
 var timerSecondsOutput = document.querySelector('.seconds');
-
+var timerButton = document.querySelector('.timer-button');
 
 
 
@@ -96,6 +96,8 @@ minutes.addEventListener("keydown", function () {
 seconds.addEventListener("keydown", function () {
   checkCharacters(event)
 })
+
+timerButton.addEventListener("click", startTimer)
 
 function checkCharacters(event) {
   if (invalidChars.includes(event.key)) {
