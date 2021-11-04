@@ -15,6 +15,7 @@ Exercise: #FD8078
 
 Error: #EFB7EC
 */
+
 .hidden {
     display: none !important;
 }
@@ -154,11 +155,12 @@ h3 {
     flex-direction: column;
     background-color: #2B2733;
     position: fixed;
-    margin-top: -37.25rem;
+    margin-top: -85vh;
     margin-left: 60rem;
     padding-left: 1rem;
     width: 35rem;
     height: 100vh;
+    font-size: 20px;
     color: #CBC9CF;
     border-left: 4px #46424D solid;
 }
