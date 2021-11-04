@@ -155,11 +155,11 @@ h3 {
     flex-direction: column;
     background-color: #2B2733;
     position: fixed;
-    margin-top: -85vh;
+    margin-top: -85.15vh;
     margin-left: 60rem;
     padding-left: 1rem;
     width: 35rem;
-    height: 100vh;
+    min-height: 100vh;
     font-size: 20px;
     color: #CBC9CF;
     border-left: 4px #46424D solid;
@@ -214,6 +214,7 @@ input {
     cursor: pointer;
     height: 200px;
     width: 200px;
+    margin-bottom: 10vh;
     border-radius: 50%;
     background-color: #46424D;
     border: 4px #CBC9CF solid;
@@ -282,13 +283,6 @@ input {
     border-radius: 3px;
 }
 
-.timer-button {
-  background-color: red;
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
-  border: 2px #C278FD solid;
-}
 
 .default-text {
     margin-top: 5rem;
