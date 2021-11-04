@@ -77,7 +77,6 @@ h3 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 4.25rem;
     margin-left: 2rem;
     margin-right: 5px;
     width: 55rem;
@@ -229,6 +228,15 @@ input {
     margin-top: 2rem;
     border-radius: 3px;
 }
+
+.timer-button {
+  background-color: red;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 2px #C278FD solid;
+}
+
 .default-text {
     margin-top: 5rem;
 }
@@ -257,12 +265,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.timer-button {
-  background-color: red;
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
-  border: 2px #C278FD solid;
 }
