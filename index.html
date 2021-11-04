@@ -34,7 +34,7 @@
             <p>
                 <label for="accomplishments">What would you like to accomplish during this time?</label>
                 <br>
-                <input id="accomplishments" type="text">
+                <input class="accomplishments" id="accomplishments" type="text">
                 <div class="error-message">
                   <img class="warning" src="./assets/warning.svg">
                   <small class="warning" id="error">A description is required</small>
@@ -59,11 +59,18 @@
 
     <main class="current-activity hidden">
 
-        <h1 class="activity-header" id="current-activity-id">Current Activity</h1>
+        <h1 class="activity-header">Current Activity</h1>
         <div class="div-class">
-            <p class=“accomplishments-timer-input></p>
-            <p class=“time” id=“minutes-timer”>00</p><p class=“semicolon”>:</p><p class=“time” id=“seconds-timer”>00</p>
-            <button class=“timer-button”>START</button>
+            <article class="accomplishmentsTimer">
+            
+                <h1 class="accomplishments-timer-output">Accomplishment</h1>
+                <div class="timer-time">
+                    <p class="minutes">00</p>
+                    <p class="colon">:</p>
+                    <p class="seconds">00</p>
+                </div>
+            </article>
+            <button class="timer-button">START</button>
         </div>
     </main>
 

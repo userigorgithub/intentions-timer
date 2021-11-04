@@ -16,6 +16,28 @@ var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
 var currentActivityScreen = document.querySelector(".current-activity");
 var activityHeader = document.querySelector(".main-activity-header");
+var accomplishmentsInput = document.querySelector('.accomplishments');
+var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
+
+
+
+
+
+
+
+function timerRun() {
+
+
+  accomplishmentsOutput.innerText = accomplishmentsInput.value;
+  
+
+}
+
+
+
+
+
+
 
 
 var invalidChars = ["-", "e", "+", "E"];
@@ -77,8 +99,9 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
-    document.getElementById("current-activity-id").innerText = "Current Activity"
+    
   }
+  timerRun();
 }
 
 function changeIcon(icon, iconActive) {

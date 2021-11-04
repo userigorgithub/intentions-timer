@@ -70,6 +70,28 @@ h3 {
     height: 75vh;
     background-color: #46424D;
 }
+.accomplishments-timer {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+
+}
+.accomplishments-timer-output {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+}
+.timer-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -4rem;
+    font-size: 75px;
+    font-weight: 1500;
+    letter-spacing: 1px;
+    
+}
 .div-class {
     position: relative;
     display: flex;
@@ -77,14 +99,18 @@ h3 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 4.25rem;
     margin-left: 2rem;
     margin-right: 5px;
     width: 55rem;
     height: 75vh;
     background-color: #46424D;
 }
+.time {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 900;
 
+}
 .button-group {
     display: flex;
     justify-content: center;
@@ -130,6 +156,7 @@ h3 {
     position: fixed;
     margin-top: -37.25rem;
     margin-left: 60rem;
+    padding-left: 1rem;
     width: 35rem;
     height: 100vh;
     color: #CBC9CF;
@@ -138,6 +165,7 @@ h3 {
 .default-text {
     text-align: center;
     margin: 20px 60px;
+    margin-left: -30px;
 }
 .icon {
     height: 30px;
@@ -180,6 +208,28 @@ input {
     width: 625px;
 
 }
+.timer-button {
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #46424D;
+    border: 4px #CBC9CF solid;
+    font-size: 20px;
+    color:#CBC9CF;
+}
+.timer-button:active {
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    transform: translateY(2px);
+    border-radius: 50%;
+    background-color: #46424D;
+    border: 4px #ffffff solid;
+    font-size: 20px;
+    color:#CBC9CF;
+}
+
 #minutes {
     position: relative;
     display: block;
@@ -259,10 +309,4 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.timer-button {
-  background-color: red;
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
-  border: 2px #C278FD solid;
-}
+

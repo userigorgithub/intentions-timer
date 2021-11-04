@@ -7,6 +7,8 @@ class Activity {
     this.completed = completedTotal;
     this.id = Date.now();
   }
+
+
   startTimer() {
     this.timer = timer;
   }
@@ -17,3 +19,4 @@ class Activity {
     this.storage = storage;
   }
 }
+
