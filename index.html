@@ -12,10 +12,10 @@
     <header class="header">Intention Timer</header>
     <section class="wrapper">
     <main class="new-activity-main">
-        <h1>New Activity</h1>
+        <h1 class="activity-header">New Activity</h1>
         <h3>Select a category:</h3>
         <section class="new-activity">
-            
+
             <div class="button-group">
             <button class="button" id="button-1" name="button">
               <img class="icon" src="assets/study.svg" id="study-icon" alt="study icon"/>
@@ -56,13 +56,22 @@
         <button class="start-activity-button">START ACTIVITY</button>
         </section>
     </main>
+
     <main class="current-activity hidden">
 
+        <h1 class="activity-header" id="current-activity-id">Current Activity</h1>
+        <div class="div-class">
+            <p class=“accomplishments-timer-input></p>
+            <p class=“time” id=“minutes-timer”>00</p><p class=“semicolon”>:</p><p class=“time” id=“seconds-timer”>00</p>
+            <button class=“start-button” id=“start-button-id”>START</button>
+        </div>
     </main>
+
         <section class="past-activities right">
             <h1>Past Activities</h1>
             <p class="default-text">You haven't logged any activities yet. <br>Complete the form to the left to get started!</p>
         </section>
+
     </section>
 <script type="text/JavaScript" src="main.js"></script>
 <script type="text/JavaScript" src="Activity.js"></script>
