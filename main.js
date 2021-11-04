@@ -12,9 +12,11 @@ var minutes = document.querySelector("#minutes")
 var seconds = document.querySelector("#seconds")
 var startTimer = document.querySelector(".start-activity-button")
 var warningMessage = document.querySelector(".warning");
-var errorMessage = document.querySelector(".error-message")
-var newActivityScreen = document.querySelector(".new-activity-main")
-var currentActivityScreen = document.querySelector(".current-activity")
+var errorMessage = document.querySelector(".error-message");
+var newActivityScreen = document.querySelector(".new-activity-main");
+var currentActivityScreen = document.querySelector(".current-activity");
+var activityHeader = document.querySelector(".main-activity-header");
+
 
 var invalidChars = ["-", "e", "+", "E"];
 
@@ -63,7 +65,7 @@ function checkCharacters(event) {
 }
 
 function beginClock() {
-  
+
   if (accomplishments.value === "") {
     errorMessage.classList.remove('hidden')
   } else if (minutes.value === "") {
@@ -75,6 +77,7 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
+    document.getElementById("current-activity-id").innerText = "Current Activity"
   }
 }
 
