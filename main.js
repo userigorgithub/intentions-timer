@@ -16,9 +16,34 @@ var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
 var currentActivityScreen = document.querySelector(".current-activity");
 var activityHeader = document.querySelector(".main-activity-header");
+var accomplishmentsInput = document.querySelector('.accomplishments');
+var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
+
+
+
+
+
+
+
+function timerRun() {
+
+
+  accomplishmentsOutput.innerText = accomplishmentsInput.value;
+  
+
+}
+
+
+
+
+
+
+
+=======
 var goals = document.querySelector(".accomplishments-timer-input")
 var minOutput = document.querySelector(".time-m")
 var secOutput = document.querySelector(".time-s")
+
 
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
@@ -82,12 +107,17 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
+ Feature/Iteration2-timer-functions
+    
   }
-  makeInstance();
-  goals.innerText = accomplishments.value;
-  minOutput.innerText = minutes.valueAsNumber;
-  secOutput.innerText = seconds.valueAsNumber;
-}
+  timerRun();
+  }
+//   makeInstance();
+//   goals.innerText = accomplishments.value;
+//   minOutput.innerText = minutes.valueAsNumber;
+//   secOutput.innerText = seconds.valueAsNumber;
+// 
+// }
 
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
