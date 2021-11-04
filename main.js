@@ -24,10 +24,13 @@ var timerButton = document.querySelector('.timer-button');
 
 
 
+var mins = document.querySelector('#timer-mins');
+var secs = document.querySelector('#timer-secs');
+var upTimer;
+
 
 
 function timerRun() {
-
 
   accomplishmentsOutput.innerText = accomplishmentsInput.value;
   timerMinutesOutput.innerText = minutes.value;
@@ -41,12 +44,6 @@ function timerRun() {
   setInterval(minutes.value, seconds.value);
 
 }
-
-
-
-
-
-
 
 
 var goals = document.querySelector(".accomplishments-timer-input")
@@ -97,7 +94,6 @@ seconds.addEventListener("keydown", function () {
   checkCharacters(event)
 })
 
-timerButton.addEventListener("click", startTimer)
 
 function checkCharacters(event) {
   if (invalidChars.includes(event.key)) {
@@ -119,10 +115,33 @@ function beginClock() {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
 
-
+    var activityChoice = new Activity(category, accomplishments.value, minutes.value, seconds.value)
   }
   timerRun();
   }
+
+
+/////////////////////////////////////////////////////
+
+
+timerButton.addEventListener("click", function() {
+  if (upTimer === undefined) {
+    upTimer = setInterval(timer, 1000)
+  } else {
+    alert("Timer running");
+  }
+})
+
+function timer() {
+  if (secs.innerText != 0) {
+    secs.innerText--;
+  } else if (mins.innerText != 0 && secs.innerText == 0){
+    secs.innerText = 59;
+    mins.innerText--;
+  }
+}
+
+
 //   makeInstance();
 //   goals.innerText = accomplishments.value;
 //   minOutput.innerText = minutes.valueAsNumber;
