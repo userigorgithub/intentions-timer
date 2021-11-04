@@ -16,154 +16,186 @@ Exercise: #FD8078
 Error: #EFB7EC
 */
 
-.hidden {
-    display: none !important;
-}
-/* .wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-} */
-body {
-    background-color: #2B2733;
-    background-size: cover;
-    margin: -10px;
-    font-family: "Montserrat";
-    font-weight: 700;
-    color: #FFF;
-}
-.activity-header {
-    color: #CBC9CF;
-    margin-left: 2rem;
-    font-size: 24px;
-}
 
-h3 {
-    position: absolute;
-    z-index: 1;
-    margin-left: 9.75rem;
-    margin-top: 2rem;
+/*  ========================
+         Global Styling
+    ======================== */
+    .hidden {
+        display: none !important;
+    }
+
+    body {
+        background-color: #2B2733;
+        background-size: cover;
+        margin: -10px;
+        font-family: "Montserrat";
+        font-weight: 700;
+        color: #FFF;
+    }
+
+    h3 {
+        position: absolute;
+        z-index: 1;
+        margin-left: 9.75rem;
+        margin-top: 2rem;
+    }
+    .header {
+        display: flex;
+        background-color: #46424D;
+        color: #CBC9CF;
+        font-size: 28px;
+        width: 105vw;
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+    }
+    /*  ========================
+            Layout Styling
+        ======================== */
+
+        .activity-header {
+            color: #CBC9CF;
+            margin-left: 2rem;
+            font-size: 24px;
+        }
+
+        .new-activity {
+            position: relative;
+            display: flex;
+            padding: none;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 2rem;
+            margin-right: 5px;
+            width: 55rem;
+            height: 75vh;
+            background-color: #46424D;
+        }
+
+        .past-activities {
+            display: flex;
+            flex-direction: column;
+            background-color: #2B2733;
+            position: fixed;
+            margin-top: -85.15vh;
+            margin-left: 60rem;
+            padding-left: 1rem;
+            width: 35rem;
+            min-height: 100vh;
+            font-size: 20px;
+            color: #CBC9CF;
+            border-left: 4px #46424D solid;
+        }
+    /*  ========================
+               Components
+        ======================== */
+
+       
+     /* ========================
+        Components: Buttons; Env 
+        ======================== */
+        .button {
+            cursor: pointer;
+            padding: auto;
+            display: inline-block;
+            margin-top: 1vh;
+            margin-left: 7rem;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 2px #FFF solid;
+            width: 120px;
+            height: 60px;
+            background-color: transparent;
+            background-image: inherit;
+            color: #FFF;
+            font-size: 18px;
+            border-radius: 3px;
+            }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -6rem;
 }
-.header {
-    display: flex;
-    background-color: #46424D;
-    color: #CBC9CF;
-    font-size: 28px;
-    width: 105vw;
-    height: 10vh;
-    align-items: center;
-    justify-content: center;
-}
-.goal-set {
+                   /*  ========================
+                        Components: Buttons; Ind 
+                        ======================== */
+                        #button-1:focus {
+                            border: 2px #B3FD78 solid;
+                            color: #B3FD78;
+                          }
+                          
+                          #button-2:focus {
+                            border: 2px #C278FD solid;
+                            color: #C278FD;
+                          }
+                          
+                          #button-3:focus {
+                            border: 2px #FD8078 solid;
+                            color: #FD8078;
+                          }
+
+                         /* ========================
+                               Components: Timer
+                            ======================== */
+                            .accomplishments-timer {
+                                display: flex;
+                                justify-content: center;
+                                align-items: space-between;
+                                flex-direction: column;
+                            
+                            }
+                            .accomplishments-timer-output {
+                                display: flex;
+                                justify-content: center;
+                                font-size: 28px;
+                            }
+                            .timer-time {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-top: -4rem;
+                                font-size: 75px;
+                                font-weight: 1500;
+                                letter-spacing: 1px;
+                                
+                            }
+                            .div-class {
+                                position: relative;
+                                display: flex;
+                                padding: none;
+                                justify-content: center;
+                                flex-direction: column;
+                                align-items: center;
+                                margin-left: 2rem;
+                                margin-right: 5px;
+                                width: 55rem;
+                                height: 75vh;
+                                background-color: #46424D;
+                            }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    .goal-set {
     display: block;
     margin-left: -3rem;
 }
-.new-activity {
-    position: relative;
-    display: flex;
-    padding: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2rem;
-    margin-right: 5px;
-    width: 55rem;
-    height: 75vh;
-    background-color: #46424D;
-}
-.accomplishments-timer {
-    display: flex;
-    justify-content: center;
-    align-items: space-between;
-    flex-direction: column;
 
-}
-.accomplishments-timer-output {
-    display: flex;
-    justify-content: center;
-    font-size: 28px;
-}
-.timer-time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -4rem;
-    font-size: 75px;
-    font-weight: 1500;
-    letter-spacing: 1px;
-    
-}
-.div-class {
-    position: relative;
-    display: flex;
-    padding: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2rem;
-    margin-right: 5px;
-    width: 55rem;
-    height: 75vh;
-    background-color: #46424D;
-}
-.time {
-    display: inline-block;
-    font-size: 30px;
-    font-weight: 900;
 
-}
-.button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -6rem;
-}
-.button {
-    cursor: pointer;
-    padding: auto;
-    display: inline-block;
-    margin-top: 1vh;
-    margin-left: 7rem;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border: 2px #FFF solid;
-    width: 120px;
-    height: 60px;
-    background-color: transparent;
-    background-image: inherit;
-    color: #FFF;
-    font-size: 18px;
-    border-radius: 3px;
-}
 
-#button-1:focus {
-  border: 2px #B3FD78 solid;
-  color: #B3FD78;
-}
 
-#button-2:focus {
-  border: 2px #C278FD solid;
-  color: #C278FD;
-}
 
-#button-3:focus {
-  border: 2px #FD8078 solid;
-  color: #FD8078;
-}
-.past-activities {
-    display: flex;
-    flex-direction: column;
-    background-color: #2B2733;
-    position: fixed;
-    margin-top: -85.15vh;
-    margin-left: 60rem;
-    padding-left: 1rem;
-    width: 35rem;
-    min-height: 100vh;
-    font-size: 20px;
-    color: #CBC9CF;
-    border-left: 4px #46424D solid;
-}
+
+
+
 .default-text {
     text-align: center;
     margin: 20px 60px;

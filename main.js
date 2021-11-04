@@ -18,7 +18,8 @@ var currentActivityScreen = document.querySelector(".current-activity");
 var activityHeader = document.querySelector(".main-activity-header");
 var accomplishmentsInput = document.querySelector('.accomplishments');
 var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
-
+var timerMinutesOutput = document.querySelector('.minutes');
+var timerSecondsOutput = document.querySelector('.seconds');
 
 
 
@@ -29,7 +30,10 @@ function timerRun() {
 
 
   accomplishmentsOutput.innerText = accomplishmentsInput.value;
-  
+  timerMinutesOutput.innerText = minutes.value;
+  timerSecondsOutput.innerText = seconds.value;
+
+  setInterval(minutes.value, seconds.value);
 
 }
 
@@ -117,7 +121,7 @@ function beginClock() {
 //   minOutput.innerText = minutes.valueAsNumber;
 //   secOutput.innerText = seconds.valueAsNumber;
 // 
-// }
+ //}
 
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
