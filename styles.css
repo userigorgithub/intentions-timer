@@ -279,6 +279,15 @@ input {
     margin-top: 2rem;
     border-radius: 3px;
 }
+
+.timer-button {
+  background-color: red;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 2px #C278FD solid;
+}
+
 .default-text {
     margin-top: 5rem;
 }
@@ -308,5 +317,3 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-
