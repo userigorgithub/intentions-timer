@@ -1,16 +1,16 @@
 var buttonStudy = document.querySelector('#button-1');
-var buttonMeditate = document.querySelector('#button-2')
-var buttonExercise = document.querySelector('#button-3')
+var buttonMeditate = document.querySelector('#button-2');
+var buttonExercise = document.querySelector('#button-3');
 var studyIconLit = document.querySelector('#study-icon-active');
 var studyIcon = document.querySelector('#study-icon');
 var meditateIcon = document.querySelector('#meditate-icon');
 var meditateIconLit = document.querySelector('#meditate-icon-active');
 var exerciseIcon = document.querySelector('#exercise-icon');
 var exerciseIconLit = document.querySelector('#exercise-icon-active');
-var accomplishments = document.querySelector("#accomplishments")
-var minutes = document.querySelector("#minutes")
-var seconds = document.querySelector("#seconds")
-var startTimer = document.querySelector(".start-activity-button")
+var accomplishments = document.querySelector("#accomplishments");
+var minutes = document.querySelector("#minutes");
+var seconds = document.querySelector("#seconds");
+var startTimer = document.querySelector(".start-activity-button");
 var warningMessage = document.querySelector(".warning");
 var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
@@ -20,14 +20,17 @@ var accomplishmentsInput = document.querySelector('.accomplishments');
 var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
 var timerMinutesOutput = document.querySelector('.minutes');
 var timerSecondsOutput = document.querySelector('.seconds');
+var timerButton = document.querySelector('.timer-button');
 
 
 
+var mins = document.querySelector('#timer-mins');
+var secs = document.querySelector('#timer-secs');
+var upTimer;
 
 
 
 function timerRun() {
-
 
   accomplishmentsOutput.innerText = accomplishmentsInput.value;
   timerMinutesOutput.innerText = minutes.value;
@@ -41,12 +44,6 @@ function timerRun() {
   setInterval(minutes.value, seconds.value);
 
 }
-
-
-
-
-
-
 
 
 var goals = document.querySelector(".accomplishments-timer-input")
@@ -97,6 +94,7 @@ seconds.addEventListener("keydown", function () {
   checkCharacters(event)
 })
 
+
 function checkCharacters(event) {
   if (invalidChars.includes(event.key)) {
     event.preventDefault()
@@ -117,10 +115,33 @@ function beginClock() {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
 
-
+    var activityChoice = new Activity(category, accomplishments.value, minutes.value, seconds.value)
   }
   timerRun();
   }
+
+
+/////////////////////////////////////////////////////
+
+
+timerButton.addEventListener("click", function() {
+  if (upTimer === undefined) {
+    upTimer = setInterval(timer, 1000)
+  } else {
+    alert("Timer running");
+  }
+})
+
+function timer() {
+  if (secs.innerText != 0) {
+    secs.innerText--;
+  } else if (mins.innerText != 0 && secs.innerText == 0){
+    secs.innerText = 59;
+    mins.innerText--;
+  }
+}
+
+
 //   makeInstance();
 //   goals.innerText = accomplishments.value;
 //   minOutput.innerText = minutes.valueAsNumber;

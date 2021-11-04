@@ -1,22 +1,21 @@
 class Activity {
-  constructor(categoryType, descriptionText, minutesSpent, secondsSpent, completedTotal) {
-    this.category = categoryType;
-    this.description = descriptionText;
-    this.minutes = minutesSpent;
-    this.seconds = secondsSpent;
-    this.completed = completedTotal;
+  constructor(category, description, minutes, seconds) {
+    this.category = category;
+    this.description = description;
+    this.minutes = minutes;
+    this.seconds = seconds;
+    this.completed = false;
     this.id = Date.now();
   }
 
 
   startTimer() {
-    this.timer = timer;
+
   }
   markComplete() {
-    this.complete = complete;
+    this.complete = true;
   }
   saveToStorage() {
     this.storage = storage;
   }
 }
-
