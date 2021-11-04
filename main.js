@@ -16,10 +16,12 @@ var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
 var currentActivityScreen = document.querySelector(".current-activity");
 var activityHeader = document.querySelector(".main-activity-header");
-
+var goals = document.querySelector(".accomplishments-timer-input")
+var minOutput = document.querySelector(".time-m")
+var secOutput = document.querySelector(".time-s")
 
 var invalidChars = ["-", "e", "+", "E"];
-
+var category = "";
 
 
 errorMessage.classList.add('hidden');
@@ -28,6 +30,7 @@ meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
 
 buttonStudy.addEventListener('click', function() {
+category = "study"
 meditateIconLit.classList.add('hidden')
 exerciseIconLit.classList.add('hidden')
 meditateIcon.classList.remove('hidden')
@@ -35,6 +38,7 @@ exerciseIcon.classList.remove('hidden')
 changeIcon(studyIcon, studyIconLit)});
 
 buttonMeditate.addEventListener('click', function() {
+  category = "meditate"
   studyIconLit.classList.add('hidden')
   exerciseIconLit.classList.add('hidden')
   studyIcon.classList.remove('hidden')
@@ -42,6 +46,7 @@ buttonMeditate.addEventListener('click', function() {
   changeIcon(meditateIcon, meditateIconLit)
 });
 buttonExercise.addEventListener('click', function() {
+  category = "exercise"
   studyIconLit.classList.add('hidden')
   meditateIconLit.classList.add('hidden')
   studyIcon.classList.remove('hidden')
@@ -77,11 +82,18 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
-    document.getElementById("current-activity-id").innerText = "Current Activity"
   }
+  makeInstance();
+  goals.innerText = accomplishments.value;
+  minOutput.innerText = minutes.valueAsNumber;
+  secOutput.innerText = seconds.valueAsNumber;
 }
 
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
     iconActive.classList.remove('hidden');
+}
+
+function makeInstance() {
+  var currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value, (minutes.value + seconds.value))
 }
