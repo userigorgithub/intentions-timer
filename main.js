@@ -32,7 +32,12 @@ function timerRun() {
   accomplishmentsOutput.innerText = accomplishmentsInput.value;
   timerMinutesOutput.innerText = minutes.value;
   timerSecondsOutput.innerText = seconds.value;
-
+    if(minutes.value < 10) {
+      timerMinutesOutput.innerText = `0${minutes.value} `
+    }
+    if (seconds.value < 10) {
+      timerSecondsOutput.innerText = ` 0${seconds.value}`
+    }
   setInterval(minutes.value, seconds.value);
 
 }
@@ -112,7 +117,7 @@ function beginClock() {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
 
-    
+
   }
   timerRun();
   }
@@ -120,7 +125,7 @@ function beginClock() {
 //   goals.innerText = accomplishments.value;
 //   minOutput.innerText = minutes.valueAsNumber;
 //   secOutput.innerText = seconds.valueAsNumber;
-// 
+//
  //}
 
 function changeIcon(icon, iconActive) {
