@@ -244,8 +244,8 @@ input {
 }
 .timer-button {
     cursor: pointer;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin-bottom: 10vh;
     border-radius: 50%;
     background-color: #46424D;
@@ -302,6 +302,14 @@ input {
     width: 170px;
     margin-left: 30rem;
     margin-top: 2rem;
+    border-radius: 3px;
+}
+.log-activity {
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    width: 180px;
+    margin-bottom: 15px;
     border-radius: 3px;
 }
 .start-activity-button:hover {

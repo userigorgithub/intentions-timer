@@ -40,16 +40,16 @@ function categoryButtonColor() {
 
 
 function timerRun() {
-  accomplishmentsOutput.innerText = accomplishmentsInput.value;
-  timerMinutesOutput.innerText = minutes.value;
-  timerSecondsOutput.innerText = seconds.value;
-    if(minutes.value < 10) {
-      timerMinutesOutput.innerText = `0${minutes.value} `
+
+  accomplishmentsOutput.innerText = currentActivity.description;
+  timerMinutesOutput.innerText = currentActivity.minutes;
+  timerSecondsOutput.innerText = currentActivity.seconds;
+    if(minutes.value <= 9){
+      timerMinutesOutput.innerText = `0${currentActivity.minutes} `
+    } else if (seconds.value <= 9) {
+      timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
     }
-    if (seconds.value < 10) {
-      timerSecondsOutput.innerText = ` 0${seconds.value}`
-    }
-  setInterval(minutes.value, seconds.value);
+ 
 
 }
 
@@ -176,25 +176,15 @@ function timer() {
     secs.innerText--;
   } else if (mins.innerText != 0 && secs.innerText == 0){
     secs.innerText = 59;
-    mins.innerText--;
+    mins.innerText = mins.innerText--;
   } else if (mins.innerText && secs.innerText == 0) {
     timerButton.innerText = "COMPLETE!";
   }
 }
 
 
-//   makeInstance();
-//   goals.innerText = accomplishments.value;
-//   minOutput.innerText = minutes.valueAsNumber;
-//   secOutput.innerText = seconds.valueAsNumber;
-//
- //}
-
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
     iconActive.classList.remove('hidden');
 }
 
-// function makeInstance() {
-//   var currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value, (minutes.value + seconds.value))
-// }
