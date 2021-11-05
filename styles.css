@@ -122,19 +122,19 @@ Error: #EFB7EC
                    /*  ========================
                         Components: Buttons; Ind 
                         ======================== */
-                        #button-1:focus {
-                            border: 2px #B3FD78 solid;
-                            color: #B3FD78;
+                        #button-1 {
+                            border: 2px #FFF solid;
+                            color: #FFF;
                           }
                           
-                          #button-2:focus {
-                            border: 2px #C278FD solid;
-                            color: #C278FD;
+                          #button-2 {
+                            border-color: 2px #FFF solid;
+                            color: #FFF;
                           }
                           
-                          #button-3:focus {
-                            border: 2px #FD8078 solid;
-                            color: #FD8078;
+                          #button-3 {
+                            border-color: 2px #FFF solid;
+                            color: #FFF;
                           }
 
                          /* ========================

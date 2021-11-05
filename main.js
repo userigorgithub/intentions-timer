@@ -1,3 +1,4 @@
+var allButtons = document.querySelector('.button');
 var buttonStudy = document.querySelector('#button-1');
 var buttonMeditate = document.querySelector('#button-2');
 var buttonExercise = document.querySelector('#button-3');
@@ -25,6 +26,17 @@ var mins = document.querySelector('#timer-mins');
 var secs = document.querySelector('#timer-secs');
 var upTimer;
 
+
+function categoryButtonColor() {
+  if (currentActivity.category === 'study') {
+    buttonStudy.style.border = '#B3FD78';
+  } else if (currentActivity.category === 'meditate') {
+    buttonMeditate.style.color = '#C278FD';
+  } else if (currentActivity.category === 'exercise') {
+    buttonExercise.style.color = '#FD8078';
+  } 
+  
+}
 
 
 function timerRun() {
@@ -59,26 +71,48 @@ exerciseIconLit.classList.add('hidden');
 
 buttonStudy.addEventListener('click', function() {
 category = "study"
+buttonStudy.style.border = '2px #B3FD78 solid';
+buttonStudy.style.color = '#B3FD78'
+buttonMeditate.style.border = '2px #FFF solid';
+buttonMeditate.style.color = '#FFF'
+buttonExercise.style.border = '2px #FFF solid';
+buttonExercise.style.color = '#FFF'
 meditateIconLit.classList.add('hidden')
 exerciseIconLit.classList.add('hidden')
 meditateIcon.classList.remove('hidden')
 exerciseIcon.classList.remove('hidden')
+
 changeIcon(studyIcon, studyIconLit)});
 
 buttonMeditate.addEventListener('click', function() {
   category = "meditate"
+
+  buttonMeditate.style.border = '2px #C278FD solid';
+  buttonMeditate.style.color = '#C278FD'
+  buttonStudy.style.border = '2px #FFF solid';
+  buttonStudy.style.color = '#FFF'
+  buttonExercise.style.border = '2px #FFF solid';
+  buttonExercise.style.color = '#FFF'
   studyIconLit.classList.add('hidden')
   exerciseIconLit.classList.add('hidden')
+
   studyIcon.classList.remove('hidden')
   exerciseIcon.classList.remove('hidden')
   changeIcon(meditateIcon, meditateIconLit)
 });
 buttonExercise.addEventListener('click', function() {
   category = "exercise"
+  buttonExercise.style.border = '2px #FD8078 solid';
+  buttonExercise.style.color = '#FD8078'
   studyIconLit.classList.add('hidden')
   meditateIconLit.classList.add('hidden')
+  buttonStudy.style.border = '2px #FFF solid';
+  buttonStudy.style.color = '#FFF'
+  buttonMeditate.style.border = '2px #FFF solid';
+  buttonMeditate.style.color = '#FFF'
   studyIcon.classList.remove('hidden')
   meditateIcon.classList.remove('hidden')
+
   changeIcon(exerciseIcon, exerciseIconLit)
 });
 
