@@ -21,9 +21,6 @@ var accomplishmentsOutput = document.querySelector('.accomplishments-timer-outpu
 var timerMinutesOutput = document.querySelector('.minutes');
 var timerSecondsOutput = document.querySelector('.seconds');
 var timerButton = document.querySelector('.timer-button');
-
-
-
 var mins = document.querySelector('#timer-mins');
 var secs = document.querySelector('#timer-secs');
 var upTimer;
@@ -53,6 +50,7 @@ var secOutput = document.querySelector(".time-s")
 
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
+var savedActivities = [];
 
 
 errorMessage.classList.add('hidden');
@@ -115,10 +113,11 @@ function beginClock() {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
 
-    var activityChoice = new Activity(category, accomplishments.value, minutes.value, seconds.value)
+    var currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
+    savedActivities.push(currentActivity);
   }
   timerRun();
-  }
+}
 
 
 /////////////////////////////////////////////////////
@@ -127,8 +126,6 @@ function beginClock() {
 timerButton.addEventListener("click", function() {
   if (upTimer === undefined) {
     upTimer = setInterval(timer, 1000)
-  } else {
-    alert("Timer running");
   }
 })
 
@@ -138,6 +135,8 @@ function timer() {
   } else if (mins.innerText != 0 && secs.innerText == 0){
     secs.innerText = 59;
     mins.innerText--;
+  } else if (mins.innerText && secs.innerText == 0) {
+    timerButton.innerText = "COMPLETE!";
   }
 }
 
