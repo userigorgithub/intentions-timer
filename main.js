@@ -28,7 +28,6 @@ var upTimer;
 
 
 function timerRun() {
-
   accomplishmentsOutput.innerText = accomplishmentsInput.value;
   timerMinutesOutput.innerText = minutes.value;
   timerSecondsOutput.innerText = seconds.value;
@@ -51,7 +50,7 @@ var secOutput = document.querySelector(".time-s")
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
 var savedActivities = [];
-
+var currentActivity;
 
 errorMessage.classList.add('hidden');
 studyIconLit.classList.add('hidden');
@@ -100,7 +99,6 @@ function checkCharacters(event) {
 }
 
 function beginClock() {
-
   if (accomplishments.value === "") {
     errorMessage.classList.remove('hidden')
   } else if (minutes.value === "") {
@@ -112,11 +110,21 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
-
-    var currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
-    savedActivities.push(currentActivity);
   }
+     currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
+    savedActivities.push(currentActivity);
   timerRun();
+  changeCountdownColor()
+}
+
+function changeCountdownColor() {
+  if (currentActivity.category === 'study') {
+    timerButton.style.borderColor = '#B3FD78';
+  } else if (currentActivity.category === 'meditate') {
+    timerButton.style.borderColor = '#C278FD';
+  } else if (currentActivity.category === 'exercise') {
+    timerButton.style.borderColor = '#FD8078';
+  }
 }
 
 
