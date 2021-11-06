@@ -53,7 +53,7 @@ function defaultState() {
   exerciseIcon.classList.remove('hidden');
 
 }
-
+//change//
 function timerRun() {
 
   accomplishmentsOutput.innerText = currentActivity.description;
