@@ -344,6 +344,25 @@ input {
     margin-left: 72%;
     margin-top: 5px;
 }
+
+.study-card-color {
+  background-color:#B3FD78;
+  border: 2px #B3FD78 solid;
+  position: relative;
+}
+
+.meditate-card-color {
+  background-color: #C278FD;
+  border: 2px #C278FD solid;
+  position: relative;
+}
+
+.exercise-card-color {
+  background-color: #FD8078;
+  border: 2px #FD8078 solid;
+  position: relative;
+}
+
 .card-title {
     font-size: 18px;
     margin-left: 8px;
@@ -390,16 +409,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.study-color {
-  border: 2px #B3FD78 solid;
-}
-
-.meditate-color {
-  background-color: #C278FD;
-}
-
-.exercise-color {
-  background-color: #FD8078;
 }
