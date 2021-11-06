@@ -39,8 +39,7 @@ function categoryButtonColor() {
   } else if (currentActivity.category === 'exercise') {
     buttonExercise.style.color = '#FD8078';
   }
-
-}
+};
 
 
 function timerRun() {
@@ -53,12 +52,13 @@ function timerRun() {
     } else if (seconds.value <= 9) {
       timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
     }
-}
+    
+};
 
 
-var goals = document.querySelector(".accomplishments-timer-input")
-var minOutput = document.querySelector(".time-m")
-var secOutput = document.querySelector(".time-s")
+var goals = document.querySelector(".accomplishments-timer-input");
+var minOutput = document.querySelector(".time-m");
+var secOutput = document.querySelector(".time-s");
 
 
 var invalidChars = ["-", "e", "+", "E"];
@@ -71,7 +71,7 @@ studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
 
-logCurrentActivity.addEventListener("click", saveToStorage)
+logCurrentActivity.addEventListener("click", saveToStorage);
 
 buttonStudy.addEventListener('click', function() {
 category = "study"
@@ -85,12 +85,11 @@ meditateIconLit.classList.add('hidden')
 exerciseIconLit.classList.add('hidden')
 meditateIcon.classList.remove('hidden')
 exerciseIcon.classList.remove('hidden')
-
-changeIcon(studyIcon, studyIconLit)});
+changeIcon(studyIcon, studyIconLit)
+});
 
 buttonMeditate.addEventListener('click', function() {
   category = "meditate"
-
   buttonMeditate.style.border = '2px #C278FD solid';
   buttonMeditate.style.color = '#C278FD'
   buttonStudy.style.border = '2px #FFF solid';
@@ -99,11 +98,11 @@ buttonMeditate.addEventListener('click', function() {
   buttonExercise.style.color = '#FFF'
   studyIconLit.classList.add('hidden')
   exerciseIconLit.classList.add('hidden')
-
   studyIcon.classList.remove('hidden')
   exerciseIcon.classList.remove('hidden')
   changeIcon(meditateIcon, meditateIconLit)
 });
+
 buttonExercise.addEventListener('click', function() {
   category = "exercise"
   buttonExercise.style.border = '2px #FD8078 solid';
@@ -116,25 +115,24 @@ buttonExercise.addEventListener('click', function() {
   buttonMeditate.style.color = '#FFF'
   studyIcon.classList.remove('hidden')
   meditateIcon.classList.remove('hidden')
-
   changeIcon(exerciseIcon, exerciseIconLit)
 });
 
-startTimer.addEventListener("click", beginClock)
+startTimer.addEventListener("click", beginClock);
 
 minutes.addEventListener("keydown", function () {
   checkCharacters(event)
-})
+});
+
 seconds.addEventListener("keydown", function () {
   checkCharacters(event)
-})
-
+});
 
 function checkCharacters(event) {
   if (invalidChars.includes(event.key)) {
     event.preventDefault()
   }
-}
+};
 
 function beginClock() {
   if (accomplishments.value === "") {
@@ -153,7 +151,7 @@ function beginClock() {
     savedActivities.push(currentActivity);
   timerRun();
   changeCountdownColor()
-}
+};
 
 function changeCountdownColor() {
   if (currentActivity.category === 'study') {
@@ -163,17 +161,13 @@ function changeCountdownColor() {
   } else if (currentActivity.category === 'exercise') {
     timerButton.style.borderColor = '#FD8078';
   }
-}
-
-
-/////////////////////////////////////////////////////
-
+};
 
 timerButton.addEventListener("click", function() {
   if (upTimer === undefined) {
     upTimer = setInterval(timer, 1000)
   }
-})
+});
 
 function timer() {
   if (secs.innerText != 0) {
@@ -181,19 +175,22 @@ function timer() {
   } else if (mins.innerText != 0 && secs.innerText == 0){
     secs.innerText = 59;
     mins.innerText = mins.innerText--;
+  }else if (mins.innerText && secs.innerText=== 0) {
+    logCurrentActivity.classList.remove('.hidden');
   } else if (mins.innerText && secs.innerText == 0) {
     timerButton.innerText = "COMPLETE!";
     clearTimeout(upTimer)
     currentActivity.markComplete()
+    logCurrentActivity.classList.remove('hidden');
   }
-}
+};
 
 
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
     iconActive.classList.remove('hidden');
-}
+};
 
 function saveToStorage() {
   localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
-}
+};
