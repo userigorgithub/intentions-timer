@@ -27,9 +27,8 @@ var secs = document.querySelector('#timer-secs');
 var logCurrentActivity = document.querySelector(".log-activity");
 var upTimer;
 var indicator = document.querySelector('.card-indicator');
-var studyCardColor = document.querySelector(".study-card-color")
-var meditateCardColor = document.querySelector(".meditate-card-color")
-var exerciseCardColor = document.querySelector(".exercise-card-color")
+var defaultText = document.querySelector('.default-text');
+var activityCard = document.querySelector('.activity-card');
 
 
 
@@ -37,15 +36,6 @@ var exerciseCardColor = document.querySelector(".exercise-card-color")
 //   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
 // }
 
-function categoryButtonColor() {
-  if (currentActivity.category === 'study') {
-    buttonStudy.style.border = '#B3FD78';
-  } else if (currentActivity.category === 'meditate') {
-    buttonMeditate.style.color = '#C278FD';
-  } else if (currentActivity.category === 'exercise') {
-    buttonExercise.style.color = '#FD8078';
-  }
-};
 
 
 function timerRun() {
@@ -147,7 +137,7 @@ function beginClock() {
     errorMessage.classList.remove('hidden')
   } else if (minutes.value === "") {
     errorMessage.classList.remove('hidden')
-    // errorMessage.innerHTML = "A minutes value is required"
+    //errorMessage.innerText = "A minutes value is required"
   } else if (seconds.value === "") {
     errorMessage.classList.remove('hidden')
     // errorMessage.innerHTML = "A seconds value is required"
@@ -168,6 +158,7 @@ function changeCountdownColor() {
     timerButton.style.borderColor = '#C278FD';
   } else if (currentActivity.category === 'exercise') {
     timerButton.style.borderColor = '#FD8078';
+
   }
 };
 
@@ -201,28 +192,24 @@ function changeIcon(icon, iconActive) {
 
 function saveToStorage() {
   localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
-    createCard()
+  defaultText.classList.add('hidden');
+  activityCard.classList.remove('hidden');
+  createCard()
+
+
 }
 
 function createCard(category) {
   var newCard = document.querySelector(".activity-card")
   newCard.innerHTML = `
     <article class="${currentActivity.category}-card-color"></article>
-    <h2 class="card-title">${currentActivity.category}</h2>
+    <article class="card-indicator-${currentActivity.category}"></article>
+    <h2 class="card-title">${currentActivity.category.toUpperCase()}</h2>
      <p class="card-time">${currentActivity.minutes} MIN ${currentActivity.seconds} SECONDS</p>
      <p class="card-activity">${currentActivity.description}</p>`
 
 }
 
-// function cardColor() {
-//   if (currentActivity.category === 'study') {
-//     indicator.style.backgroundColor = '#B3FD78';
-//     indicator.style.border = '#B3FD78';
-//   } else if (currentActivity.category === 'meditate') {
-//     indicator.style.backgroundColor = '#C278FD';
-//     indicator.style.border = '#C278FD';
-//   } else if (currentActivity.category === 'exercise') {
-//     indicator.style.backgroundColor = '#FD8078';
-//     indicator.style.border = '#FD8078';
-//   }
-// }
+      
+
+

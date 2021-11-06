@@ -123,16 +123,9 @@ Error: #EFB7EC
                    /*  ========================
                         Components: Buttons; Ind
                         ======================== */
-                        #button-1 {
-                            border: 2px #FFF solid;
-                            color: #FFF;
-                          }
-
-                          #button-2 {
-                            border-color: 2px #FFF solid;
-                            color: #FFF;
-                          }
-
+                        
+                          #button-1,
+                          #button-2,
                           #button-3 {
                             border-color: 2px #FFF solid;
                             color: #FFF;
@@ -179,51 +172,35 @@ Error: #EFB7EC
                             }
 
 
-
-
-
-
-
-
-
     .goal-set {
     display: block;
     margin-left: -3rem;
+    margin-top: 1rem;
+
 }
-
-
-
-
-
-
-
 
 .default-text {
     text-align: center;
     margin: 20px 60px;
     margin-left: -30px;
 }
-.icon {
-    height: 30px;
-    width: 30px;
-}
+ .icon,
 .icon2 {
     height: 30px;
     width: 30px;
-}
+} 
+#study-icon,
+#exercise-icon,
 #meditate-icon {
     height: 30px;
     width: 30px;
 }
-#exercise-icon {
-    height: 30px;
-    width: 30px;
-}
+
 label {
     display: block;
     width: 550px;
     text-align: top;
-    margin-left: 7rem;
+    margin-left: 3rem;
     margin-right: auto;
     font-size: 18px;
 }
@@ -246,8 +223,8 @@ input {
 }
 .timer-button {
     cursor: pointer;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin-bottom: 10vh;
     border-radius: 50%;
     background-color: #46424D;
@@ -257,8 +234,8 @@ input {
 }
 .timer-button:active {
     cursor: pointer;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     transform: translateY(2px);
     border-radius: 50%;
     background-color: #46424D;
@@ -328,7 +305,7 @@ input {
     height: 15vh;
     width: 30vw;
     padding-top: 3px;
-    margin-top: 10px;
+    margin-top: -.5rem;
     background-color: #46424D;
     display: flex;
     flex-direction: column;
@@ -337,37 +314,51 @@ input {
 .card-indicator {
     height: 40px;
     width: 3px;
-    background-color:#EFB7EC;
-    border: 2px #EFB7EC solid;
+    background-color:#504d50;
+    border: 2px #504d50 solid;
     position: absolute;
     border-radius: 25%;
     margin-left: 72%;
     margin-top: 5px;
 }
-
-.study-card-color {
-  background-color:#B3FD78;
-  border: 2px #B3FD78 solid;
-  position: relative;
+.card-indicator-study {
+    height: 40px;
+    width: 3px;
+    background-color:#B3FD78;
+    border: 2px #B3FD78 solid;
+    position: absolute;
+    border-radius: 25%;
+    margin-left: 72%;
+    margin-top: 5px;
 }
-
-.meditate-card-color {
-  background-color: #C278FD;
-  border: 2px #C278FD solid;
-  position: relative;
+.card-indicator-meditate {
+    height: 40px;
+    width: 3px;
+    background-color:#C278FD;
+    border: 2px #C278FD solid;
+    position: absolute;
+    border-radius: 25%;
+    margin-left: 72%;
+    margin-top: 5px;
 }
-
-.exercise-card-color {
-  background-color: #FD8078;
-  border: 2px #FD8078 solid;
-  position: relative;
+.card-indicator-exercise {
+    height: 40px;
+    width: 3px;
+    background-color:#FD8078;
+    border: 2px #FD8078 solid;
+    position: absolute;
+    border-radius: 25%;
+    margin-left: 72%;
+    margin-top: 5px;
 }
-
 .card-title {
-    font-size: 18px;
+    height: 15px;
+    width: 40px;
+    font-size: 12px;
     margin-left: 8px;
     margin-top: 4px;
-    font-style: bold;
+    margin-bottom: 20px;
+    font-weight: 2px; 
 }
 .card-time {
     font-size: 22px;
