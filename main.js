@@ -38,8 +38,22 @@ var returnHome = document.querySelector('.return-home-btn');
 //   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
 // }
 
+function defaultState() {
+  buttonExercise.style.border = '2px #FFF solid';
+  buttonExercise.style.color = '#FFF';
+  buttonMeditate.style.border = '2px #FFF solid';
+  buttonMeditate.style.color = '#FFF';
+  buttonStudy.style.border = '2px #FFF solid';
+  buttonStudy.style.color = '#FFF';
+  studyIconLit.classList.add('hidden');
+  meditateIconLit.classList.add('hidden');
+  exerciseIconLit.classList.add('hidden');
+  studyIcon.classList.remove('hidden');
+  meditateIcon.classList.remove('hidden');
+  exerciseIcon.classList.remove('hidden');
 
-
+}
+//change//
 function timerRun() {
 
   accomplishmentsOutput.innerText = currentActivity.description;
@@ -219,4 +233,5 @@ function createCard(category) {
 function changeHome() {
   newActivityScreen.classList.remove('hidden');
   currentActivityScreen.classList.add('hidden');
+  defaultState();
 }
