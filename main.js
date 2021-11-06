@@ -26,7 +26,7 @@ var mins = document.querySelector('#timer-mins');
 var secs = document.querySelector('#timer-secs');
 var logCurrentActivity = document.querySelector(".log-activity");
 var upTimer;
-
+var indicator = document.querySelector('.card-indicator');
 // window.onload = displayPastActivities() {
 //   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
 // }
@@ -52,7 +52,7 @@ function timerRun() {
     } else if (seconds.value <= 9) {
       timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
     }
-    
+
 };
 
 
@@ -193,4 +193,28 @@ function changeIcon(icon, iconActive) {
 
 function saveToStorage() {
   localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
-};
+    createCard()
+}
+
+function createCard(category) {
+  var newCard = document.querySelector(".activity-card")
+  newCard.innerHTML = `
+    <article class="card-indicator"></article>
+    <h2 class="card-title">${currentActivity.category}</h2>
+     <p class="card-time">${currentActivity.minutes}MIN ${currentActivity.seconds}SECONDS</p>
+     <p class="card-activity">${currentActivity.description}</p>`
+
+}
+
+function cardColor() {
+  if (currentActivity.category === 'study') {
+    indicator.style.backgroundColor = '#B3FD78';
+    indicator.style.border = '#B3FD78';
+  } else if (currentActivity.category === 'meditate') {
+    indicator.style.backgroundColor = '#C278FD';
+    indicator.style.border = '#C278FD';
+  } else if (currentActivity.category === 'exercise') {
+    indicator.style.backgroundColor = '#FD8078';
+    indicator.style.border = '#FD8078';
+  }
+}
