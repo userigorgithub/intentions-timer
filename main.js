@@ -24,8 +24,12 @@ var timerSecondsOutput = document.querySelector('.seconds');
 var timerButton = document.querySelector('.timer-button');
 var mins = document.querySelector('#timer-mins');
 var secs = document.querySelector('#timer-secs');
+var logCurrentActivity = document.querySelector(".log-activity");
 var upTimer;
 
+// window.onload = displayPastActivities() {
+//   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
+// }
 
 function categoryButtonColor() {
   if (currentActivity.category === 'study') {
@@ -34,8 +38,8 @@ function categoryButtonColor() {
     buttonMeditate.style.color = '#C278FD';
   } else if (currentActivity.category === 'exercise') {
     buttonExercise.style.color = '#FD8078';
-  } 
-  
+  }
+
 }
 
 
@@ -49,8 +53,6 @@ function timerRun() {
     } else if (seconds.value <= 9) {
       timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
     }
- 
-
 }
 
 
@@ -68,6 +70,8 @@ errorMessage.classList.add('hidden');
 studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
+
+logCurrentActivity.addEventListener("click", saveToStorage)
 
 buttonStudy.addEventListener('click', function() {
 category = "study"
@@ -179,6 +183,8 @@ function timer() {
     mins.innerText = mins.innerText--;
   } else if (mins.innerText && secs.innerText == 0) {
     timerButton.innerText = "COMPLETE!";
+    clearTimeout(upTimer)
+    currentActivity.markComplete()
   }
 }
 
@@ -188,3 +194,6 @@ function changeIcon(icon, iconActive) {
     iconActive.classList.remove('hidden');
 }
 
+function saveToStorage() {
+  localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
+}
