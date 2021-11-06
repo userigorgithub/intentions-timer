@@ -27,6 +27,12 @@ var secs = document.querySelector('#timer-secs');
 var logCurrentActivity = document.querySelector(".log-activity");
 var upTimer;
 var indicator = document.querySelector('.card-indicator');
+var studyCardColor = document.querySelector(".study-card-color")
+var meditateCardColor = document.querySelector(".meditate-card-color")
+var exerciseCardColor = document.querySelector(".exercise-card-color")
+
+
+
 // window.onload = displayPastActivities() {
 //   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
 // }
@@ -70,6 +76,8 @@ errorMessage.classList.add('hidden');
 studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
+
+
 
 logCurrentActivity.addEventListener("click", saveToStorage);
 
@@ -199,22 +207,22 @@ function saveToStorage() {
 function createCard(category) {
   var newCard = document.querySelector(".activity-card")
   newCard.innerHTML = `
-    <article class="card-indicator"></article>
+    <article class="${currentActivity.category}-card-color"></article>
     <h2 class="card-title">${currentActivity.category}</h2>
-     <p class="card-time">${currentActivity.minutes}MIN ${currentActivity.seconds}SECONDS</p>
+     <p class="card-time">${currentActivity.minutes} MIN ${currentActivity.seconds} SECONDS</p>
      <p class="card-activity">${currentActivity.description}</p>`
 
 }
 
-function cardColor() {
-  if (currentActivity.category === 'study') {
-    indicator.style.backgroundColor = '#B3FD78';
-    indicator.style.border = '#B3FD78';
-  } else if (currentActivity.category === 'meditate') {
-    indicator.style.backgroundColor = '#C278FD';
-    indicator.style.border = '#C278FD';
-  } else if (currentActivity.category === 'exercise') {
-    indicator.style.backgroundColor = '#FD8078';
-    indicator.style.border = '#FD8078';
-  }
-}
+// function cardColor() {
+//   if (currentActivity.category === 'study') {
+//     indicator.style.backgroundColor = '#B3FD78';
+//     indicator.style.border = '#B3FD78';
+//   } else if (currentActivity.category === 'meditate') {
+//     indicator.style.backgroundColor = '#C278FD';
+//     indicator.style.border = '#C278FD';
+//   } else if (currentActivity.category === 'exercise') {
+//     indicator.style.backgroundColor = '#FD8078';
+//     indicator.style.border = '#FD8078';
+//   }
+// }
