@@ -19,6 +19,7 @@ var currentActivityScreen = document.querySelector(".current-activity");
 var activityHeader = document.querySelector(".main-activity-header");
 var accomplishmentsInput = document.querySelector('.accomplishments');
 var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
+var accomplishmentsTimer = document.querySelector('.accomplishmentsTimer')
 var timerMinutesOutput = document.querySelector('.minutes');
 var timerSecondsOutput = document.querySelector('.seconds');
 var timerButton = document.querySelector('.timer-button');
@@ -29,6 +30,7 @@ var upTimer;
 var indicator = document.querySelector('.card-indicator');
 var defaultText = document.querySelector('.default-text');
 var activityCard = document.querySelector('.activity-card');
+var returnHome = document.querySelector('.return-home-btn');
 
 
 
@@ -69,6 +71,7 @@ exerciseIconLit.classList.add('hidden');
 
 
 
+returnHome.addEventListener("click", changeHome)
 logCurrentActivity.addEventListener("click", saveToStorage);
 
 buttonStudy.addEventListener('click', function() {
@@ -194,9 +197,11 @@ function saveToStorage() {
   localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
   defaultText.classList.add('hidden');
   activityCard.classList.remove('hidden');
+  logCurrentActivity.classList.add('hidden');
+  accomplishmentsTimer.classList.add('hidden')
+  timerButton.classList.add('hidden')
+  returnHome.classList.remove('hidden');
   createCard()
-
-
 }
 
 function createCard(category) {
@@ -210,6 +215,8 @@ function createCard(category) {
 
 }
 
-      
 
-
+function changeHome() {
+  newActivityScreen.classList.remove('hidden');
+  currentActivityScreen.classList.add('hidden');
+}

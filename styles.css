@@ -123,7 +123,7 @@ Error: #EFB7EC
                    /*  ========================
                         Components: Buttons; Ind
                         ======================== */
-                        
+
                           #button-1,
                           #button-2,
                           #button-3 {
@@ -188,7 +188,7 @@ Error: #EFB7EC
 .icon2 {
     height: 30px;
     width: 30px;
-} 
+}
 #study-icon,
 #exercise-icon,
 #meditate-icon {
@@ -358,7 +358,7 @@ input {
     margin-left: 8px;
     margin-top: 4px;
     margin-bottom: 20px;
-    font-weight: 2px; 
+    font-weight: 2px;
 }
 .card-time {
     font-size: 22px;
@@ -372,6 +372,18 @@ input {
     margin-left: 8px;
     margin-top: -8px;
 }
+
+.return-home-btn:hover {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #cfcdd1;
+    height: 40px;
+    width: 170px;
+    margin-left: 30rem;
+    margin-bottom: 2rem;
+    border-radius: 3px;
+}
+
 .default-text {
     margin-top: 5rem;
 }
