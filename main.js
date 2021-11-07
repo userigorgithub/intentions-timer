@@ -1,3 +1,4 @@
+// Query Selector Variables
 var allButtons = document.querySelector('.button');
 var buttonStudy = document.querySelector('#button-1');
 var buttonMeditate = document.querySelector('#button-2');
@@ -26,81 +27,49 @@ var timerButton = document.querySelector('.timer-button');
 var mins = document.querySelector('#timer-mins');
 var secs = document.querySelector('#timer-secs');
 var logCurrentActivity = document.querySelector(".log-activity");
-var upTimer;
 var indicator = document.querySelector('.card-indicator');
 var defaultText = document.querySelector('.default-text');
 var activityCard = document.querySelector('.activity-card');
 var returnHome = document.querySelector('.return-home-btn');
-
-
-
-// window.onload = displayPastActivities() {
-//   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
-// }
-
-function defaultState() {
-  buttonExercise.style.border = '2px #FFF solid';
-  buttonExercise.style.color = '#FFF';
-  buttonMeditate.style.border = '2px #FFF solid';
-  buttonMeditate.style.color = '#FFF';
-  buttonStudy.style.border = '2px #FFF solid';
-  buttonStudy.style.color = '#FFF';
-  studyIconLit.classList.add('hidden');
-  meditateIconLit.classList.add('hidden');
-  exerciseIconLit.classList.add('hidden');
-  studyIcon.classList.remove('hidden');
-  meditateIcon.classList.remove('hidden');
-  exerciseIcon.classList.remove('hidden');
-
-}
-//change//
-function timerRun() {
-
-  accomplishmentsOutput.innerText = currentActivity.description;
-  timerMinutesOutput.innerText = currentActivity.minutes;
-  timerSecondsOutput.innerText = currentActivity.seconds;
-    if(minutes.value <= 9){
-      timerMinutesOutput.innerText = `0${currentActivity.minutes} `
-    } else if (seconds.value <= 9) {
-      timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
-    }
-
-};
-
-
 var goals = document.querySelector(".accomplishments-timer-input");
 var minOutput = document.querySelector(".time-m");
 var secOutput = document.querySelector(".time-s");
 
-
+// Global Variables
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
 var savedActivities = [];
 var currentActivity;
+var upTimer;
 
 errorMessage.classList.add('hidden');
 studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
 
-
-
+// Event Listeners
+startTimer.addEventListener("click", beginClock);
+minutes.addEventListener("keydown", function () {
+  checkCharacters(event)
+});
+seconds.addEventListener("keydown", function () {
+  checkCharacters(event)
+});
 returnHome.addEventListener("click", changeHome)
 logCurrentActivity.addEventListener("click", saveToStorage);
-
 buttonStudy.addEventListener('click', function() {
-category = "study"
-buttonStudy.style.border = '2px #B3FD78 solid';
-buttonStudy.style.color = '#B3FD78'
-buttonMeditate.style.border = '2px #FFF solid';
-buttonMeditate.style.color = '#FFF'
-buttonExercise.style.border = '2px #FFF solid';
-buttonExercise.style.color = '#FFF'
-meditateIconLit.classList.add('hidden')
-exerciseIconLit.classList.add('hidden')
-meditateIcon.classList.remove('hidden')
-exerciseIcon.classList.remove('hidden')
-changeIcon(studyIcon, studyIconLit)
+  category = "study"
+  buttonStudy.style.border = '2px #B3FD78 solid';
+  buttonStudy.style.color = '#B3FD78'
+  buttonMeditate.style.border = '2px #FFF solid';
+  buttonMeditate.style.color = '#FFF'
+  buttonExercise.style.border = '2px #FFF solid';
+  buttonExercise.style.color = '#FFF'
+  meditateIconLit.classList.add('hidden')
+  exerciseIconLit.classList.add('hidden')
+  meditateIcon.classList.remove('hidden')
+  exerciseIcon.classList.remove('hidden')
+  changeIcon(studyIcon, studyIconLit)
 });
 
 buttonMeditate.addEventListener('click', function() {
@@ -133,15 +102,41 @@ buttonExercise.addEventListener('click', function() {
   changeIcon(exerciseIcon, exerciseIconLit)
 });
 
-startTimer.addEventListener("click", beginClock);
-
-minutes.addEventListener("keydown", function () {
-  checkCharacters(event)
+timerButton.addEventListener("click", function() {
+  if (upTimer === undefined) {
+    upTimer = setInterval(timer, 1000)
+  }
 });
 
-seconds.addEventListener("keydown", function () {
-  checkCharacters(event)
-});
+// Event Handlers
+function defaultState() {
+  buttonExercise.style.border = '2px #FFF solid';
+  buttonExercise.style.color = '#FFF';
+  buttonMeditate.style.border = '2px #FFF solid';
+  buttonMeditate.style.color = '#FFF';
+  buttonStudy.style.border = '2px #FFF solid';
+  buttonStudy.style.color = '#FFF';
+  studyIconLit.classList.add('hidden');
+  meditateIconLit.classList.add('hidden');
+  exerciseIconLit.classList.add('hidden');
+  studyIcon.classList.remove('hidden');
+  meditateIcon.classList.remove('hidden');
+  exerciseIcon.classList.remove('hidden');
+
+}
+//change//
+function timerRun() {
+
+  accomplishmentsOutput.innerText = currentActivity.description;
+  timerMinutesOutput.innerText = currentActivity.minutes;
+  timerSecondsOutput.innerText = currentActivity.seconds;
+    if(minutes.value <= 9){
+      timerMinutesOutput.innerText = `0${currentActivity.minutes} `
+    } else if (seconds.value <= 9) {
+      timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
+    }
+
+};
 
 function checkCharacters(event) {
   if (invalidChars.includes(event.key)) {
@@ -179,12 +174,6 @@ function changeCountdownColor() {
   }
 };
 
-timerButton.addEventListener("click", function() {
-  if (upTimer === undefined) {
-    upTimer = setInterval(timer, 1000)
-  }
-});
-
 function timer() {
   if (secs.innerText != 0) {
     secs.innerText--;
@@ -200,7 +189,6 @@ function timer() {
     logCurrentActivity.classList.remove('hidden');
   }
 };
-
 
 function changeIcon(icon, iconActive) {
     icon.classList.add('hidden');
@@ -229,9 +217,12 @@ function createCard(category) {
 
 }
 
-
 function changeHome() {
   newActivityScreen.classList.remove('hidden');
   currentActivityScreen.classList.add('hidden');
   defaultState();
 }
+
+// window.onload = displayPastActivities() {
+//   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
+// }
