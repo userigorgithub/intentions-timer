@@ -22,8 +22,7 @@
 
 ## Overview
 
-The time to track your time is here! Intention Timer was the project to gain better and deeper understanding in writing HTML, CSS, and JavaScript code.
-
+The time to track your time is here! Intention Timer was the project to gain better and deeper understanding in writing HTML, CSS, and JavaScript codes. It utilizes local storage to store activity information. Intention Timer also allows to monitor people's study, meditation, and exercise activities.
 
 ## Instructions
 
