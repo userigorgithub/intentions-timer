@@ -39,6 +39,7 @@ var secOutput = document.querySelector(".time-s");
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
 var savedActivities = [];
+var savedCards = [];
 var currentActivity;
 var upTimer;
 
@@ -59,6 +60,7 @@ returnHome.addEventListener("click", changeHome)
 logCurrentActivity.addEventListener("click", saveToStorage);
 buttonStudy.addEventListener('click', function() {
   category = "study"
+  changeIcon(studyIcon, studyIconLit)
   buttonStudy.style.border = '2px #B3FD78 solid';
   buttonStudy.style.color = '#B3FD78'
   buttonMeditate.style.border = '2px #FFF solid';
@@ -69,7 +71,7 @@ buttonStudy.addEventListener('click', function() {
   exerciseIconLit.classList.add('hidden')
   meditateIcon.classList.remove('hidden')
   exerciseIcon.classList.remove('hidden')
-  changeIcon(studyIcon, studyIconLit)
+
 });
 
 buttonMeditate.addEventListener('click', function() {
@@ -153,6 +155,8 @@ function beginClock() {
   } else if (seconds.value === "") {
     errorMessage.classList.remove('hidden')
     // errorMessage.innerHTML = "A seconds value is required"
+  } else if (category === "") {
+    errorMessage.classList.remove('hidden')
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
@@ -183,8 +187,8 @@ function timer() {
   }else if (mins.innerText && secs.innerText=== 0) {
     logCurrentActivity.classList.remove('.hidden');
   } else if (mins.innerText && secs.innerText == 0) {
-    timerButton.innerText = "COMPLETE!";
     clearTimeout(upTimer)
+    timerButton.innerText = "COMPLETE!";
     currentActivity.markComplete()
     logCurrentActivity.classList.remove('hidden');
   }
@@ -213,14 +217,19 @@ function createCard(category) {
     <article class="card-indicator-${currentActivity.category}"></article>
     <h2 class="card-title">${currentActivity.category.toUpperCase()}</h2>
      <p class="card-time">${currentActivity.minutes} MIN ${currentActivity.seconds} SECONDS</p>
-     <p class="card-activity">${currentActivity.description}</p>`
+     <p class="card-activity">${currentActivity.description}</p>`;
+  savedCards.push(newCard);
 
 }
 
 function changeHome() {
   newActivityScreen.classList.remove('hidden');
   currentActivityScreen.classList.add('hidden');
-  defaultState();
+  accomplishments.value = '';
+  minutes.value = '';
+  seconds.value = '';
+  currentActivity = '';
+  defaultState()
 }
 
 // window.onload = displayPastActivities() {
