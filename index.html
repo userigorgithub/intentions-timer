@@ -9,77 +9,77 @@
     <title>Intention Timer</title>
 </head>
 <body>
-    <header class="header">Intention Timer</header>
-    <section class="wrapper">
+  <header class="header">Intention Timer</header>
+  <section class="wrapper">
     <main class="new-activity-main">
-        <h1 class="activity-header">New Activity</h1>
-        <h3>Select a category:</h3>
-        <section class="new-activity">
-            <div class="button-group">
-            <button class="button" id="button-1" name="button">
-              <img class="icon" src="assets/study.svg" id="study-icon" alt="study icon"/>
-              <img class="icon2" src="assets/study-active.svg" id="study-icon-active" alt="study icon"/>
-              <br>Study</button>
-            <button class="button" id="button-2" name="button">
-              <img class="icon" src="assets/meditate.svg" id="meditate-icon" alt="meditate icon"/>
-              <img class="icon2" src="assets/meditate-active.svg" id="meditate-icon-active" alt="meditate icon"/>
-              <br>Meditate</button>
-            <button class="button" id="button-3" name="button">
-              <img class="icon" src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
-              <img class="icon2" src="assets/exercise-active.svg" id="exercise-icon-active" alt="exercise icon"/>
-              <br>Exercise</button>
-            </div>
+      <h1 class="activity-header">New Activity</h1>
+      <h3>Select a category:</h3>
+      <section class="new-activity">
+        <div class="button-group">
+          <button class="button" id="button-1" name="button">
+            <img class="icon" src="assets/study.svg" id="study-icon" alt="study icon"/>
+            <img class="icon2" src="assets/study-active.svg" id="study-icon-active" alt="study icon"/>
+          <br>Study</button>
+          <button class="button" id="button-2" name="button">
+            <img class="icon" src="assets/meditate.svg" id="meditate-icon" alt="meditate icon"/>
+            <img class="icon2" src="assets/meditate-active.svg" id="meditate-icon-active" alt="meditate icon"/>
+          <br>Meditate</button>
+          <button class="button" id="button-3" name="button">
+            <img class="icon" src="assets/exercise.svg" id="exercise-icon" alt="exercise icon"/>
+            <img class="icon2" src="assets/exercise-active.svg" id="exercise-icon-active" alt="exercise icon"/>
+          <br>Exercise</button>
+        </div>
         <form class="goal-set">
-            <label for="accomplishments">What would you like to accomplish during this time?</label>
-                <br>
-                <input class="accomplishments" id="accomplishments" type="text">
-                <div class="error-message">
-                  <img class="warning" src="./assets/warning.svg">
-                  <small class="warning" id="error">A description is required</small>
-                </div>
+          <label for="accomplishments">What would you like to accomplish during this time?</label>
+          <br>
+          <input class="accomplishments" id="accomplishments" type="text">
+          <div class="error-message">
+            <img class="warning" src="./assets/warning.svg">
+            <small class="warning" id="error">A description is required</small>
+          </div>
         </form>
         <form class="timer">
-            <p>
-                <label for="minutes" id="minutes-label">Minutes</label>
-                <br>
-                <input id="minutes" type="number" min=1 >
-            </p>
-            <p>
-                <label for ="seconds" id="seconds-label">Seconds</label>
-                <br>
-                <input id="seconds" type="number" min=1 max=59>
-            </p>
+          <p>
+            <label for="minutes" id="minutes-label">Minutes</label>
+            <br>
+            <input id="minutes" type="number" min=1 >
+          </p>
+          <p>
+            <label for ="seconds" id="seconds-label">Seconds</label>
+            <br>
+            <input id="seconds" type="number" min=1 max=59>
+          </p>
         </form>
         <button class="start-activity-button">START ACTIVITY</button>
-        </section>
+      </section>
     </main>
     <main class="current-activity hidden">
-        <h1 class="activity-header">Current Activity</h1>
-        <div class="div-class">
-            <article class="accomplishmentsTimer">
-                <h1 class="accomplishments-timer-output">Accomplishment</h1>
-                <div class="timer-time">
-                    <p class="minutes" id="timer-mins">00</p>
-                    <p class="colon">:</p>
-                    <p class="seconds" id="timer-secs">00</p>
-                </div>
-            </article>
-            <button class="timer-button">START</button>
-            <button class="log-activity hidden">LOG ACTIVITY</button>
-            <button class="return-home-btn hidden">CREATE NEW ACTIVITY</button>
-        </div>
+      <h1 class="activity-header">Current Activity</h1>
+      <div class="div-class">
+        <article class="accomplishmentsTimer">
+          <h1 class="accomplishments-timer-output">Accomplishment</h1>
+          <div class="timer-time">
+            <p class="minutes" id="timer-mins">00</p>
+            <p class="colon">:</p>
+            <p class="seconds" id="timer-secs">00</p>
+          </div>
+        </article>
+        <button class="timer-button">START</button>
+        <button class="log-activity hidden">LOG ACTIVITY</button>
+        <button class="return-home-btn hidden">CREATE NEW ACTIVITY</button>
+      </div>
     </main>
-        <section class="past-activities right">
-            <h1>Past Activities</h1>
-            <p class="default-text">You haven't logged any activities yet. <br>Complete the form to the left to get started!</p>
-            <article class="activity-card hidden">
-            <article class="card-indicator"></article>
-                <h2 class="card-title">Category</h2>
-                <p class="card-time">Time</p>
-                <p class="card-activity">Activity</p>
-            </article>
-        </section>
+    <section class="past-activities right">
+      <h1>Past Activities</h1>
+      <p class="default-text">You haven't logged any activities yet. <br>Complete the form to the left to get started!</p>
+      <article class="activity-card hidden">
+        <article class="card-indicator"></article>
+        <h2 class="card-title">Category</h2>
+        <p class="card-time">Time</p>
+        <p class="card-activity">Activity</p>
+      </article>
     </section>
+  </section>
 <script type="text/JavaScript" src="main.js"></script>
 <script type="text/JavaScript" src="Activity.js"></script>
 </body>
