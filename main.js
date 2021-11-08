@@ -223,7 +223,7 @@ function changeButton() {
 ////////
 
 function saveToStorage() {
-  localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
+  // localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
   completedActivityScreen.classList.remove('hidden');//NEW
   currentActivityScreen.classList.add('hidden');//NEW
   defaultText.classList.add('hidden');
@@ -236,17 +236,15 @@ function saveToStorage() {
 }
 
 function createCard(category) {
-  var newCard = document.querySelector(".activity-card")
-  newCard.category.innerText = `${currentActivity.category}`;
-
-  // newCard.innerHTML += `
-  //   <article class="${currentActivity.category}-card-color"></article>
-  //   <article class="card-indicator-${currentActivity.category}"></article>
-  //   <h2 class="card-title">${currentActivity.category.toUpperCase()}</h2>
-  //    <p class="card-time">${currentActivity.minutes} MIN ${currentActivity.seconds} SECONDS</p>
-  //    <p class="card-activity">${currentActivity.description}</p>`;
-  savedCards.push(newCard);
-
+  activityCard.innerHTML = ``;
+  for (var i = 0; i < savedActivities.length; i++) {
+    activityCard.innerHTML += `
+    <article class="${savedActivities[i].category}-card-color"></article>
+    <article class="card-indicator-${savedActivities[i].category}"></article>
+    <h2 class="card-title">${savedActivities[i].category.toUpperCase()}</h2>
+    <p class="card-time">${savedActivities[i].minutes} MIN ${savedActivities[i].seconds} SECONDS</p>
+    <p class="card-activity">${savedActivities[i].description}</p>`;
+  }
 }
 
 function changeHome() {
