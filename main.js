@@ -155,12 +155,16 @@ function beginClock() {
     errorMessage.classList.remove('hidden')
   } else if (minutes.value === "") {
     errorMessage.classList.remove('hidden')
-    //errorMessage.innerText = "A minutes value is required"
+    errorMessage.innerHTML = `<img class="warning" src="./assets/warning.svg">
+    <small class="warning" id="error">A minutes value is required</small>`
   } else if (seconds.value === "") {
     errorMessage.classList.remove('hidden')
-    // errorMessage.innerHTML = "A seconds value is required"
+    errorMessage.innerHTML = `<img class="warning" src="./assets/warning.svg">
+    <small class="warning" id="error">A seconds value is required</small>`
   } else if (category === "") {
     errorMessage.classList.remove('hidden')
+    errorMessage.innerHTML = `<img class="warning" src="./assets/warning.svg">
+    <small class="warning" id="error">A category is required</small>`
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
@@ -233,12 +237,14 @@ function saveToStorage() {
 
 function createCard(category) {
   var newCard = document.querySelector(".activity-card")
-  newCard.innerHTML += `
-    <article class="${currentActivity.category}-card-color"></article>
-    <article class="card-indicator-${currentActivity.category}"></article>
-    <h2 class="card-title">${currentActivity.category.toUpperCase()}</h2>
-     <p class="card-time">${currentActivity.minutes} MIN ${currentActivity.seconds} SECONDS</p>
-     <p class="card-activity">${currentActivity.description}</p>`;
+  newCard.category.innerText = `${currentActivity.category}`;
+
+  // newCard.innerHTML += `
+  //   <article class="${currentActivity.category}-card-color"></article>
+  //   <article class="card-indicator-${currentActivity.category}"></article>
+  //   <h2 class="card-title">${currentActivity.category.toUpperCase()}</h2>
+  //    <p class="card-time">${currentActivity.minutes} MIN ${currentActivity.seconds} SECONDS</p>
+  //    <p class="card-activity">${currentActivity.description}</p>`;
   savedCards.push(newCard);
 
 }
