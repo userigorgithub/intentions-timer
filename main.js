@@ -17,6 +17,7 @@ var warningMessage = document.querySelector(".warning");
 var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
 var currentActivityScreen = document.querySelector(".current-activity");
+var completedActivityScreen = document.querySelector(".completed-activity");//NEW
 var activityHeader = document.querySelector(".main-activity-header");
 var accomplishmentsInput = document.querySelector('.accomplishments');
 var accomplishmentsOutput = document.querySelector('.accomplishments-timer-output');
@@ -41,6 +42,7 @@ var category = "";
 var savedActivities = [];
 var savedCards = [];
 var currentActivity;
+// Reference to timer
 var upTimer;
 
 errorMessage.classList.add('hidden');
@@ -108,6 +110,8 @@ timerButton.addEventListener("click", function() {
   if (upTimer === undefined) {
     upTimer = setInterval(timer, 1000)
   }
+  timer();
+  //timerRun();
 });
 
 // Event Handlers
@@ -160,11 +164,16 @@ function beginClock() {
   } else {
     newActivityScreen.classList.add('hidden');
     currentActivityScreen.classList.remove('hidden');
+    accomplishmentsTimer.classList.remove('hidden');//NEW
+    timerButton.classList.remove('hidden');//NEW
+    completedActivityScreen.classList.add('hidden');//NEW
+
   }
      currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
     savedActivities.push(currentActivity);
   timerRun();
-  changeCountdownColor()
+  changeCountdownColor();
+  //changeButton();//new
 };
 
 function changeCountdownColor() {
@@ -183,14 +192,15 @@ function timer() {
     secs.innerText--;
   } else if (mins.innerText != 0 && secs.innerText == 0){
     secs.innerText = 59;
-    mins.innerText = mins.innerText--;
-  }else if (mins.innerText && secs.innerText=== 0) {
+    mins.innerText--;
+  } else if (mins.innerText && secs.innerText === 0) {
     logCurrentActivity.classList.remove('.hidden');
   } else if (mins.innerText && secs.innerText == 0) {
-    clearTimeout(upTimer)
+    clearInterval(upTimer);
     timerButton.innerText = "COMPLETE!";
     currentActivity.markComplete()
     logCurrentActivity.classList.remove('hidden');
+
   }
 };
 
@@ -199,20 +209,31 @@ function changeIcon(icon, iconActive) {
     iconActive.classList.remove('hidden');
 };
 
+///////
+function changeButton() {
+  timerButton.innerText = "START";
+  currentActivity.completed = false;
+
+
+}
+////////
+
 function saveToStorage() {
   localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
+  completedActivityScreen.classList.remove('hidden');//NEW
+  currentActivityScreen.classList.add('hidden');//NEW
   defaultText.classList.add('hidden');
   activityCard.classList.remove('hidden');
   logCurrentActivity.classList.add('hidden');
   accomplishmentsTimer.classList.add('hidden')
   timerButton.classList.add('hidden')
   returnHome.classList.remove('hidden');
-  createCard()
+  createCard();
 }
 
 function createCard(category) {
   var newCard = document.querySelector(".activity-card")
-  newCard.innerHTML = `
+  newCard.innerHTML += `
     <article class="${currentActivity.category}-card-color"></article>
     <article class="card-indicator-${currentActivity.category}"></article>
     <h2 class="card-title">${currentActivity.category.toUpperCase()}</h2>
@@ -224,12 +245,13 @@ function createCard(category) {
 
 function changeHome() {
   newActivityScreen.classList.remove('hidden');
-  currentActivityScreen.classList.add('hidden');
+  completedActivityScreen.classList.add('hidden');
   accomplishments.value = '';
   minutes.value = '';
   seconds.value = '';
   currentActivity = '';
-  defaultState()
+  defaultState();
+  changeButton();
 }
 
 // window.onload = displayPastActivities() {
