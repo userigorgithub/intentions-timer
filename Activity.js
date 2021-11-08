@@ -1,5 +1,5 @@
 class Activity {
-  constructor(category, description, minutes, seconds) {
+  constructor(category, description, minutes, seconds, completed) {
     this.category = category;
     this.description = description;
     this.minutes = minutes;
@@ -7,8 +7,8 @@ class Activity {
     this.completed = false;
     this.id = Date.now();
   }
-  
+
   markComplete() {
-    this.complete = true;
+    this.completed = true;
   }
 }
