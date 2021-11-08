@@ -87,6 +87,7 @@ Error: #EFB7EC
             font-size: 20px;
             color: #CBC9CF;
             border-left: 4px #46424D solid;
+            overflow: scroll;
         }
     /*  ========================
                Components
@@ -180,9 +181,11 @@ Error: #EFB7EC
 }
 
 .default-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     text-align: center;
-    margin: 20px 60px;
-    margin-left: -30px;
+    margin-bottom: 140%;
 }
  .icon,
 .icon2 {
@@ -302,6 +305,7 @@ input {
     border-radius: 3px;
 }
 .activity-card {
+    justify-content: space-between;
     height: 15vh;
     width: 30vw;
     padding-top: 3px;
@@ -312,6 +316,7 @@ input {
     border-radius: 10px;
 }
 .card-indicator {
+    display: flex;
     height: 40px;
     width: 3px;
     background-color:#504d50;
@@ -322,6 +327,7 @@ input {
     margin-top: 5px;
 }
 .card-indicator-study {
+    display: flex;
     height: 40px;
     width: 3px;
     background-color:#B3FD78;
@@ -332,6 +338,7 @@ input {
     margin-top: 5px;
 }
 .card-indicator-meditate {
+    display: flex;
     height: 40px;
     width: 3px;
     background-color:#C278FD;
@@ -342,6 +349,7 @@ input {
     margin-top: 5px;
 }
 .card-indicator-exercise {
+    display: flex;
     height: 40px;
     width: 3px;
     background-color:#FD8078;
@@ -352,6 +360,7 @@ input {
     margin-top: 5px;
 }
 .card-title {
+    display: flex;
     height: 15px;
     width: 40px;
     font-size: 12px;
@@ -361,6 +370,7 @@ input {
     font-weight: 2px;
 }
 .card-time {
+    display: flex;
     font-size: 22px;
     font-weight: 100;
     letter-spacing: 1px;
@@ -368,6 +378,7 @@ input {
     margin-top: -12px;
 }
 .card-activity {
+    display: flex;
     font-size: 18px;
     margin-left: 8px;
     margin-top: -8px;
@@ -381,10 +392,6 @@ input {
     margin-top: -40vh;
     margin-bottom: 2rem;
     border-radius: 3px;
-}
-
-.default-text {
-    margin-top: 5rem;
 }
 
 .warning {
