@@ -1,4 +1,4 @@
-// Query Selector Variables
+
 var allButtons = document.querySelector('.button');
 var buttonStudy = document.querySelector('#button-1');
 var buttonMeditate = document.querySelector('#button-2');
@@ -35,34 +35,14 @@ var returnHome = document.querySelector('.return-home-btn');
 var goals = document.querySelector(".accomplishments-timer-input");
 var minOutput = document.querySelector(".time-m");
 var secOutput = document.querySelector(".time-s");
+var timerDisplay = document.querySelector(".timer-time");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Global Variables
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
 var savedActivities = [];
 var savedCards = [];
 var currentActivity;
-// Reference to timer
+
 var upTimer;
 
 errorMessage.classList.add('hidden');
@@ -70,7 +50,6 @@ studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
 
-// Event Listeners
 startTimer.addEventListener("click", beginClock);
 minutes.addEventListener("keydown", function () {
   checkCharacters(event);
@@ -133,7 +112,6 @@ timerButton.addEventListener("click", function() {
   timer();
 });
 
-// Event Handlers
 function defaultState() {
   buttonExercise.style.border = '2px #FFF solid';
   buttonExercise.style.color = '#FFF';
@@ -149,16 +127,10 @@ function defaultState() {
   exerciseIcon.classList.remove('hidden');
 };
 
-//change//
 function timerRun() {
   accomplishmentsOutput.innerText = currentActivity.description;
   timerMinutesOutput.innerText = currentActivity.minutes;
   timerSecondsOutput.innerText = currentActivity.seconds;
-    if(minutes.value <= 9) {
-      timerMinutesOutput.innerText = `0${currentActivity.minutes} `
-    } else if (seconds.value <= 9) {
-      timerSecondsOutput.innerText = ` 0${currentActivity.seconds}`
-    };
 };
 
 function checkCharacters(event) {
@@ -208,7 +180,7 @@ function changeCountdownColor() {
 
 function timer() {
   if (secs.innerText != 0) {
-    secs.innerText--;
+    "0" + secs.innerText--;
   } else if (mins.innerText != 0 && secs.innerText == 0){
     secs.innerText = 59;
     mins.innerText--;
@@ -219,7 +191,7 @@ function timer() {
     timerButton.innerText = "COMPLETE!";
     currentActivity.markComplete();
     logCurrentActivity.classList.remove('hidden');
-  };
+  } 
 };
 
 function changeIcon(icon, iconActive) {
@@ -233,7 +205,6 @@ function changeButton() {
 };
 
 function saveToStorage() {
-  // localStorage.setItem("loggedActivities", JSON.stringify(savedActivities))
   completedActivityScreen.classList.remove('hidden');
   currentActivityScreen.classList.add('hidden');
   defaultText.classList.add('hidden');
@@ -266,8 +237,6 @@ function changeHome() {
   currentActivity = '';
   defaultState();
   changeButton();
+  timerButton.innerText = "START";
+  timer();
 };
-
-// window.onload = displayPastActivities() {
-//   var pastActivities = JSON.parse(localStorage.getItem(savedActivities))
-// }
