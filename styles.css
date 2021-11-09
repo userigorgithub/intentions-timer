@@ -1,36 +1,14 @@
-/*
-Main Background: #2B2733
-
-Text on Main BG: #CBC9CF
-
-Header and Cards: #46424D
-
-Text on Header/Cards: #FFF
-
-Study: #B3FD78
-
-Meditate: #C278FD
-
-Exercise: #FD8078
-
-Error: #EFB7EC
-*/
-
-
-/*  ========================
-         Global Styling
-    ======================== */
-    .hidden {
+.hidden {
         display: none !important;
     }
-    h1 {
+h1 {
         margin-bottom: 2rem;
-    }
-    .wrapper {
+  }
+.wrapper {
         display: flex;
     }
 
-    body {
+body {
         display: flex;
         flex-direction: column;
         background-color: #2B2733;
@@ -41,13 +19,13 @@ Error: #EFB7EC
         color: #FFF;
     }
 
-    h3 {
+h3 {
         position: absolute;
         z-index: 1;
         margin-left: 9.75rem;
         margin-top: 2rem;
     }
-    .header {
+.header {
         display: flex;
         background-color: #46424D;
         color: #CBC9CF;
@@ -57,24 +35,21 @@ Error: #EFB7EC
         align-items: center;
         justify-content: center;
     }
-    /*  ========================
-            Layout Styling
-        ======================== */
-        h1,
-        .activity-header {
+h1,
+.activity-header {
             display: flex;
             width: 20vw;
             color: #CBC9CF;
             margin-left: 2rem;
             font-size: 24px;
-        }
-        .separator {
+    }
+.separator {
             height: 100vh;
             width: 5px;
             background-color: #504d50;
             margin-left: 3%;
-        }
-        .new-activity {
+    }
+.new-activity {
             position: relative;
             display: flex;
             padding: none;
@@ -89,52 +64,23 @@ Error: #EFB7EC
             background-color: #46424D;
         }
 
-        .past-activities {
-
+.past-activities {
             float: right;
             display: flex;
-            
-            
             align-content: space-between;
             flex-direction: column;
             align-items: center;
             margin-left: -15rem;
             margin-right: 5px;
-            /* border-left: 4px #46424D solid; */
             width: 25vw;
             height: 65vh;
             border-radius: 10px;
             background-color: #2B2733;
             overflow: scroll;
             margin-top: 12vh;
-
-  
-
-
-
-            /* display: flex;
-            flex-direction: column;
-            background-color: #2B2733;
-            position: absolute;
-            /* margin-top: -85.15vh; 
-            margin-left: 60rem;
-            padding-left: 1rem;
-            width: 25vw;
-            min-height: 100vh;
-            font-size: 20px;
-            color: #CBC9CF;
-            border-left: 4px #46424D solid;
-            overflow: scroll; */
         }
-    /*  ========================
-               Components
-        ======================== */
 
-
-     /* ========================
-        Components: Buttons; Env
-        ======================== */
-        .button {
+.button {
             cursor: pointer;
             padding: auto;
             display: inline-block;
@@ -152,39 +98,34 @@ Error: #EFB7EC
             border-radius: 3px;
             }
 
-        .button-group {
+.button-group {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-left: -6rem;
 }
-                   /*  ========================
-                        Components: Buttons; Ind
-                        ======================== */
+                 
 
-                          #button-1,
-                          #button-2,
-                          #button-3 {
+#button-1,
+#button-2,
+#button-3 {
                             border-color: 2px #FFF solid;
                             color: #FFF;
-                          }
+}
 
-                         /* ========================
-                               Components: Timer
-                            ======================== */
-                            .accomplishments-timer {
+.accomplishments-timer {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
                                 flex-direction: column;
 
                             }
-                            .accomplishments-timer-output {
+.accomplishments-timer-output {
                                 display: flex;
                                 justify-content: center;
                                 font-size: 26px;
                             }
-                            .timer-time {
+.timer-time {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -194,7 +135,7 @@ Error: #EFB7EC
                                 letter-spacing: 1px;
 
                             }
-                            .div-class {
+.div-class {
                                 position: relative;
                                 display: flex;
                                 padding: none;
@@ -210,21 +151,7 @@ Error: #EFB7EC
                             }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .goal-set {
+.goal-set {
     display: block;
     margin-left: -3rem;
     margin-top: 1rem;
