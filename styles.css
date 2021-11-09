@@ -23,8 +23,16 @@ Error: #EFB7EC
     .hidden {
         display: none !important;
     }
+    h1 {
+        margin-bottom: 2rem;
+    }
+    .wrapper {
+        display: flex;
+    }
 
     body {
+        display: flex;
+        flex-direction: column;
         background-color: #2B2733;
         background-size: cover;
         margin: -10px;
@@ -52,13 +60,20 @@ Error: #EFB7EC
     /*  ========================
             Layout Styling
         ======================== */
-
+        h1,
         .activity-header {
+            display: flex;
+            width: 20vw;
             color: #CBC9CF;
             margin-left: 2rem;
             font-size: 24px;
         }
-
+        .separator {
+            height: 100vh;
+            width: 5px;
+            background-color: #504d50;
+            margin-left: 3%;
+        }
         .new-activity {
             position: relative;
             display: flex;
@@ -75,19 +90,41 @@ Error: #EFB7EC
         }
 
         .past-activities {
+
+            float: right;
             display: flex;
+            
+            
+            align-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            margin-left: -15rem;
+            margin-right: 5px;
+            /* border-left: 4px #46424D solid; */
+            width: 25vw;
+            height: 65vh;
+            border-radius: 10px;
+            background-color: #2B2733;
+            overflow: scroll;
+            margin-top: 12vh;
+
+  
+
+
+
+            /* display: flex;
             flex-direction: column;
             background-color: #2B2733;
-            position: fixed;
-            margin-top: -85.15vh;
+            position: absolute;
+            /* margin-top: -85.15vh; 
             margin-left: 60rem;
             padding-left: 1rem;
-            width: 35rem;
+            width: 25vw;
             min-height: 100vh;
             font-size: 20px;
             color: #CBC9CF;
             border-left: 4px #46424D solid;
-            overflow: scroll;
+            overflow: scroll; */
         }
     /*  ========================
                Components
@@ -182,10 +219,15 @@ Error: #EFB7EC
 
 .default-text {
     display: flex;
+    position: relative;
     align-items: flex-start;
     justify-content: center;
     text-align: center;
-    margin-bottom: 140%;
+    color: #CBC9CF;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 90%;
 }
  .icon,
 .icon2 {
@@ -305,27 +347,20 @@ input {
     border-radius: 3px;
 }
 .activity-card {
-    justify-content: space-between;
-    height: 15vh;
-    width: 30vw;
-    padding-top: 3px;
-    margin-top: -.5rem;
+    display: flex;
+    align-content: space-around;
+    position: relative;
+    height: 20vh;
+    width: 25vw;
+    font-family: inherit;
+    margin-top: none;
+    /* margin-left: -8%; */
     background-color: #46424D;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
 }
-.card-indicator {
-    display: flex;
-    height: 40px;
-    width: 3px;
-    background-color:#504d50;
-    border: 2px #504d50 solid;
-    position: absolute;
-    border-radius: 25%;
-    margin-left: 72%;
-    margin-top: 5px;
-}
+
 .card-indicator-study {
     display: flex;
     height: 40px;
@@ -334,8 +369,8 @@ input {
     border: 2px #B3FD78 solid;
     position: absolute;
     border-radius: 25%;
-    margin-left: 70%;
-    margin-top: 5px;
+    margin-left: 90%;
+    margin-top: 5%;
 }
 .card-indicator-meditate {
     display: flex;
@@ -345,8 +380,8 @@ input {
     border: 2px #C278FD solid;
     position: absolute;
     border-radius: 25%;
-    margin-left: 70%;
-    margin-top: 5px;
+    margin-left: 90%;
+    margin-top: 5%;
 }
 .card-indicator-exercise {
     display: flex;
@@ -356,18 +391,20 @@ input {
     border: 2px #FD8078 solid;
     position: absolute;
     border-radius: 25%;
-    margin-left: 70%;
-    margin-top: 5px;
+    margin-left: 90%;
+    margin-top: 5%;
 }
 .card-title {
     display: flex;
+    padding-top: .5px;
     height: 15px;
     width: 40px;
-    font-size: 12px;
+    font-size: 18px;
     margin-left: 8px;
-    margin-top: 4px;
+    margin-top: auto;
     margin-bottom: 20px;
-    font-weight: 2px;
+    font-family: inherit;
+    font-weight: 900;
 }
 .card-time {
     display: flex;
@@ -375,13 +412,14 @@ input {
     font-weight: 100;
     letter-spacing: 1px;
     margin-left: 8px;
-    margin-top: -12px;
+    margin-top: auto;
 }
 .card-activity {
     display: flex;
-    font-size: 18px;
+    font-size: 24px;
     margin-left: 8px;
-    margin-top: -8px;
+    margin-top: auto;
+    margin-bottom: 2%;
 }
 .return-home-btn {
     cursor: pointer;

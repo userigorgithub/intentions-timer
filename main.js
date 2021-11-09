@@ -36,6 +36,26 @@ var goals = document.querySelector(".accomplishments-timer-input");
 var minOutput = document.querySelector(".time-m");
 var secOutput = document.querySelector(".time-s");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Global Variables
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
@@ -229,7 +249,7 @@ function createCard(category) {
   activityCard.innerHTML = ``;
   for (var i = 0; i < savedActivities.length; i++) {
     activityCard.innerHTML += `
-    <article class="${savedActivities[i].category}-card-color"></article>
+    <article class="activity-card">
     <article class="card-indicator-${savedActivities[i].category}"></article>
     <h2 class="card-title">${savedActivities[i].category.toUpperCase()}</h2>
     <p class="card-time">${savedActivities[i].minutes} MIN ${savedActivities[i].seconds} SECONDS</p>
