@@ -210,6 +210,20 @@ Error: #EFB7EC
                             }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .goal-set {
     display: block;
     margin-left: -3rem;
@@ -353,7 +367,7 @@ input {
     height: 20vh;
     width: 25vw;
     font-family: inherit;
-    margin-top: none;
+    margin-top: 5%;
     /* margin-left: -8%; */
     background-color: #46424D;
     display: flex;
