@@ -181,7 +181,7 @@ function changeCountdownColor() {
 function timer() {
   if (secs.innerText != 0) {
     "0" + secs.innerText--;
-  } else if (mins.innerText != 0 && secs.innerText == 0){
+  } else if (mins.innerText != 0 && secs.innerText == 0) {
     secs.innerText = 59;
     mins.innerText--;
   } else if (mins.innerText && secs.innerText === 0) {
@@ -191,7 +191,7 @@ function timer() {
     timerButton.innerText = "COMPLETE!";
     currentActivity.markComplete();
     logCurrentActivity.classList.remove('hidden');
-  } 
+  }
 };
 
 function changeIcon(icon, iconActive) {
