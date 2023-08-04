@@ -42,7 +42,6 @@ var category = "";
 var savedActivities = [];
 var savedCards = [];
 var currentActivity;
-
 var upTimer;
 
 errorMessage.classList.add('hidden');
@@ -161,9 +160,8 @@ function beginClock() {
     timerButton.classList.remove('hidden');
     completedActivityScreen.classList.add('hidden');
   };
-
-     currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
-    savedActivities.push(currentActivity);
+  currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
+  savedActivities.push(currentActivity);
   timerRun();
   changeCountdownColor();
 };
@@ -195,8 +193,8 @@ function timer() {
 };
 
 function changeIcon(icon, iconActive) {
-    icon.classList.add('hidden');
-    iconActive.classList.remove('hidden');
+  icon.classList.add('hidden');
+  iconActive.classList.remove('hidden');
 };
 
 function changeButton() {
