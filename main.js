@@ -12,7 +12,7 @@ var exerciseIconLit = document.querySelector('#exercise-icon-active');
 var accomplishments = document.querySelector("#accomplishments");
 var minutes = document.querySelector("#minutes");
 var seconds = document.querySelector("#seconds");
-var startTimer = document.querySelector(".start-activity-button");
+var activityBtn = document.querySelector(".start-activity-button");
 var warningMessage = document.querySelector(".warning");
 var errorMessage = document.querySelector(".error-message");
 var newActivityScreen = document.querySelector(".new-activity-main");
@@ -25,8 +25,7 @@ var accomplishmentsTimer = document.querySelector('.accomplishmentsTimer');
 var timerMinutesOutput = document.querySelector('.minutes');
 var timerSecondsOutput = document.querySelector('.seconds');
 var timerButton = document.querySelector('.timer-button');
-var mins = document.querySelector('#timer-mins');
-var secs = document.querySelector('#timer-secs');
+var startTime = document.querySelector('.start-time');
 var logCurrentActivity = document.querySelector(".log-activity");
 var indicator = document.querySelector('.card-indicator');
 var defaultText = document.querySelector('.default-text');
@@ -40,16 +39,15 @@ var timerDisplay = document.querySelector(".timer-time");
 var invalidChars = ["-", "e", "+", "E"];
 var category = "";
 var savedActivities = [];
-var savedCards = [];
-var currentActivity;
-var upTimer;
+var currentActivity = {};
 
 errorMessage.classList.add('hidden');
 studyIconLit.classList.add('hidden');
 meditateIconLit.classList.add('hidden');
 exerciseIconLit.classList.add('hidden');
 
-startTimer.addEventListener("click", beginClock);
+activityBtn.addEventListener("click", openClock);
+
 minutes.addEventListener("keydown", function () {
   checkCharacters(event);
 });
@@ -59,6 +57,7 @@ seconds.addEventListener("keydown", function () {
 
 returnHome.addEventListener("click", changeHome);
 logCurrentActivity.addEventListener("click", saveToStorage);
+
 buttonStudy.addEventListener('click', function() {
   category = "study"
   changeIcon(studyIcon, studyIconLit);
@@ -104,12 +103,7 @@ buttonExercise.addEventListener('click', function() {
   changeIcon(exerciseIcon, exerciseIconLit);
 });
 
-timerButton.addEventListener("click", function() {
-  if (upTimer === undefined) {
-    upTimer = setInterval(timer, 1000)
-  };
-  timer();
-});
+timerButton.addEventListener("click", startTimer);
 
 function defaultState() {
   buttonExercise.style.border = '2px #FFF solid';
@@ -126,19 +120,13 @@ function defaultState() {
   exerciseIcon.classList.remove('hidden');
 };
 
-function timerRun() {
-  accomplishmentsOutput.innerText = currentActivity.description;
-  timerMinutesOutput.innerText = currentActivity.minutes;
-  timerSecondsOutput.innerText = currentActivity.seconds;
-};
-
 function checkCharacters(event) {
   if (invalidChars.includes(event.key)) {
     event.preventDefault();
   };
 };
 
-function beginClock() {
+function openClock() {
   if (accomplishments.value === "") {
     errorMessage.classList.remove('hidden');
   } else if (minutes.value === "") {
@@ -162,9 +150,16 @@ function beginClock() {
   };
   currentActivity = new Activity(category, accomplishments.value, minutes.value, seconds.value);
   savedActivities.push(currentActivity);
-  timerRun();
+  displayUserInput();
   changeCountdownColor();
 };
+
+function displayUserInput() {
+  currentActivity.minutes = currentActivity.minutes.toString().padStart(2, "0");
+  currentActivity.seconds = currentActivity.seconds.toString().padStart(2, "0");
+  startTime.innerText = `${currentActivity.minutes}:${currentActivity.seconds}`;
+  accomplishmentsOutput.innerText = `${currentActivity.description}`;
+}
 
 function changeCountdownColor() {
   if (currentActivity.category === 'study') {
@@ -176,21 +171,9 @@ function changeCountdownColor() {
   };
 };
 
-function timer() {
-  if (secs.innerText != 0) {
-    "0" + secs.innerText--;
-  } else if (mins.innerText != 0 && secs.innerText == 0) {
-    secs.innerText = 59;
-    mins.innerText--;
-  } else if (mins.innerText && secs.innerText === 0) {
-    logCurrentActivity.classList.remove('.hidden');
-  } else if (mins.innerText && secs.innerText == 0) {
-    clearInterval(upTimer);
-    timerButton.innerText = "COMPLETE!";
-    currentActivity.markComplete();
-    logCurrentActivity.classList.remove('hidden');
-  }
-};
+function startTimer() {
+  currentActivity.beginTimer(currentActivity.minutes, currentActivity.seconds);
+}
 
 function changeIcon(icon, iconActive) {
   icon.classList.add('hidden');
@@ -236,5 +219,4 @@ function changeHome() {
   defaultState();
   changeButton();
   timerButton.innerText = "START";
-  timer();
 };
